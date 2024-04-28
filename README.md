@@ -49,8 +49,16 @@ We are also on Flathub:
 # Build Instructions
 Please refer to our website's [wiki](https://lime3ds.github.io/pages/wiki.html) in order to find building instructions for Windows, Linux, Android and MacOS
 
-# Contribute
+# What's next?
+We keep a public roadmap of what features are planned to be included in the next update or two.
+You can find this at https://github.com/Lime3DS/Lime3DS/milestones
+
+# How can I contribute?
 If you believe you can help with this project, please lend us your talent! We're a team of passionate enthusiasts who need all the help we can get.
+
+If there is an issue you want solved or a feature you want implemented, feel free to open a pull request.
+
+Note: Please don't repeatedly merge `master` into your PR's branch. A maintainer will update the branch for you if/ when it is appropriate to do so
 
 # Discord
 Join our Discord community to discuss the project or talk with the developers.
