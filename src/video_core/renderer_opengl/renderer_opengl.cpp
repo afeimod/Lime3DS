@@ -696,7 +696,9 @@ void RendererOpenGL::DrawScreens(const Layout::FramebufferLayout& layout, bool f
 }
 
 void RendererOpenGL::ApplySecondLayerOpacity() {
-    if (Settings::values.custom_layout &&
+#ifndef ANDROID // TODO: Implement custom layouts on Android
+    if ((Settings::values.layout_option.GetValue() == Settings::LayoutOption::CustomLayout ||
+         Settings::values.custom_layout) &&
         Settings::values.custom_second_layer_opacity.GetValue() < 100) {
         state.blend.src_rgb_func = GL_CONSTANT_ALPHA;
         state.blend.src_a_func = GL_CONSTANT_ALPHA;
@@ -704,10 +706,13 @@ void RendererOpenGL::ApplySecondLayerOpacity() {
         state.blend.dst_rgb_func = GL_ONE_MINUS_CONSTANT_ALPHA;
         state.blend.color.alpha = Settings::values.custom_second_layer_opacity.GetValue() / 100.0f;
     }
+#endif
 }
 
 void RendererOpenGL::ResetSecondLayerOpacity() {
-    if (Settings::values.custom_layout &&
+#ifndef ANDROID // TODO: Implement custom layouts on Android
+    if ((Settings::values.layout_option.GetValue() == Settings::LayoutOption::CustomLayout ||
+         Settings::values.custom_layout) &&
         Settings::values.custom_second_layer_opacity.GetValue() < 100) {
         state.blend.src_rgb_func = GL_ONE;
         state.blend.dst_rgb_func = GL_ZERO;
@@ -715,6 +720,7 @@ void RendererOpenGL::ResetSecondLayerOpacity() {
         state.blend.dst_a_func = GL_ZERO;
         state.blend.color.alpha = 0.0f;
     }
+#endif
 }
 
 void RendererOpenGL::DrawTopScreen(const Layout::FramebufferLayout& layout,
