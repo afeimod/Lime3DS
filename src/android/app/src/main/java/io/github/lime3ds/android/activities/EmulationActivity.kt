@@ -1,4 +1,4 @@
-// Copyright 2023 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -34,13 +34,13 @@ import io.github.lime3ds.android.databinding.ActivityEmulationBinding
 import io.github.lime3ds.android.display.ScreenAdjustmentUtil
 import io.github.lime3ds.android.features.hotkeys.HotkeyUtility
 import io.github.lime3ds.android.features.settings.model.BooleanSetting
+import io.github.lime3ds.android.features.settings.model.IntSetting
 import io.github.lime3ds.android.features.settings.model.SettingsViewModel
 import io.github.lime3ds.android.features.settings.model.view.InputBindingSetting
 import io.github.lime3ds.android.fragments.EmulationFragment
 import io.github.lime3ds.android.fragments.MessageDialogFragment
 import io.github.lime3ds.android.utils.ControllerMappingHelper
 import io.github.lime3ds.android.utils.FileBrowserHelper
-import io.github.lime3ds.android.utils.ForegroundService
 import io.github.lime3ds.android.utils.EmulationLifecycleUtil
 import io.github.lime3ds.android.utils.EmulationMenuSettings
 import io.github.lime3ds.android.utils.ThemeUtil
@@ -49,7 +49,6 @@ import io.github.lime3ds.android.viewmodel.EmulationViewModel
 class EmulationActivity : AppCompatActivity() {
     private val preferences: SharedPreferences
         get() = PreferenceManager.getDefaultSharedPreferences(LimeApplication.appContext)
-    private var foregroundService: Intent? = null
     var isActivityRecreated = false
     private val emulationViewModel: EmulationViewModel by viewModels()
     private val settingsViewModel: SettingsViewModel by viewModels()
@@ -77,7 +76,7 @@ class EmulationActivity : AppCompatActivity() {
         NativeLibrary.enableAdrenoTurboMode(BooleanSetting.ADRENO_GPU_BOOST.boolean)
 
         binding = ActivityEmulationBinding.inflate(layoutInflater)
-        screenAdjustmentUtil = ScreenAdjustmentUtil(windowManager, settingsViewModel.settings)
+        screenAdjustmentUtil = ScreenAdjustmentUtil(this, windowManager, settingsViewModel.settings)
         hotkeyUtility = HotkeyUtility(screenAdjustmentUtil)
         setContentView(binding.root)
 
@@ -91,16 +90,24 @@ class EmulationActivity : AppCompatActivity() {
         // Set these options now so that the SurfaceView the game renders into is the right size.
         enableFullscreenImmersive()
 
-        // Override Citra core INI with the one set by our in game menu
+        // Override Lime3DS core INI with the one set by our in game menu
         NativeLibrary.swapScreens(
             EmulationMenuSettings.swapScreens,
             windowManager.defaultDisplay.rotation
         )
 
-        EmulationLifecycleUtil.addShutdownHook(hook = { this.finish() })
+        EmulationLifecycleUtil.addShutdownHook(hook = {
+            if (intent.getBooleanExtra("launched_from_shortcut", false)) {
+                finishAffinity()
+            } else {
+                this.finish()
+            }
+        })
 
         isEmulationRunning = true
         instance = this
+
+        applyOrientationSettings() // Check for orientation settings at startup
     }
 
     // On some devices, the system bars will not disappear on first boot or after some
@@ -109,6 +116,7 @@ class EmulationActivity : AppCompatActivity() {
     override fun onResume() {
         super.onResume()
         enableFullscreenImmersive()
+        applyOrientationSettings() // Check for orientation settings changes on runtime
     }
 
     override fun onWindowFocusChanged(hasFocus: Boolean) {
@@ -198,6 +206,11 @@ class EmulationActivity : AppCompatActivity() {
             controller.systemBarsBehavior =
                 WindowInsetsControllerCompat.BEHAVIOR_SHOW_TRANSIENT_BARS_BY_SWIPE
         }
+    }
+
+    private fun applyOrientationSettings() {
+        val orientationOption = IntSetting.ORIENTATION_OPTION.int
+        screenAdjustmentUtil.changeActivityOrientation(orientationOption)
     }
 
     // Gets button presses
@@ -484,12 +497,6 @@ class EmulationActivity : AppCompatActivity() {
 
         fun isRunning(): Boolean {
             return instance?.isEmulationRunning ?: false
-        }
-
-        fun stopForegroundService(activity: Activity) {
-            val startIntent = Intent(activity, ForegroundService::class.java)
-            startIntent.action = ForegroundService.ACTION_STOP
-            activity.startForegroundService(startIntent)
         }
     }
 }

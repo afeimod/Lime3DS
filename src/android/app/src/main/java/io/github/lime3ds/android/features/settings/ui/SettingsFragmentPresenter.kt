@@ -1,4 +1,4 @@
-// Copyright 2023 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -6,6 +6,7 @@ package io.github.lime3ds.android.features.settings.ui
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.content.res.Resources
 import android.hardware.camera2.CameraAccessException
 import android.hardware.camera2.CameraCharacteristics
 import android.hardware.camera2.CameraManager
@@ -14,6 +15,8 @@ import android.text.TextUtils
 import androidx.preference.PreferenceManager
 import io.github.lime3ds.android.LimeApplication
 import io.github.lime3ds.android.R
+import io.github.lime3ds.android.display.PortraitScreenLayout
+import io.github.lime3ds.android.display.ScreenLayout
 import io.github.lime3ds.android.features.settings.model.AbstractBooleanSetting
 import io.github.lime3ds.android.features.settings.model.AbstractIntSetting
 import io.github.lime3ds.android.features.settings.model.AbstractSetting
@@ -24,6 +27,7 @@ import io.github.lime3ds.android.features.settings.model.ScaledFloatSetting
 import io.github.lime3ds.android.features.settings.model.Settings
 import io.github.lime3ds.android.features.settings.model.StringSetting
 import io.github.lime3ds.android.features.settings.model.AbstractShortSetting
+import io.github.lime3ds.android.features.settings.model.FloatSetting
 import io.github.lime3ds.android.features.settings.model.view.DateTimeSetting
 import io.github.lime3ds.android.features.settings.model.view.HeaderSetting
 import io.github.lime3ds.android.features.settings.model.view.InputBindingSetting
@@ -42,6 +46,7 @@ import io.github.lime3ds.android.utils.GpuDriverHelper
 import io.github.lime3ds.android.utils.Log
 import io.github.lime3ds.android.utils.SystemSaveGame
 import io.github.lime3ds.android.utils.ThemeUtil
+import kotlin.math.min
 
 class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) {
     private var menuTag: String? = null
@@ -91,9 +96,12 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
             Settings.SECTION_CAMERA -> addCameraSettings(sl)
             Settings.SECTION_CONTROLS -> addControlsSettings(sl)
             Settings.SECTION_RENDERER -> addGraphicsSettings(sl)
+            Settings.SECTION_LAYOUT -> addLayoutSettings(sl)
             Settings.SECTION_AUDIO -> addAudioSettings(sl)
             Settings.SECTION_DEBUG -> addDebugSettings(sl)
             Settings.SECTION_THEME -> addThemeSettings(sl)
+            Settings.SECTION_CUSTOM_LANDSCAPE -> addCustomLandscapeSettings(sl)
+            Settings.SECTION_CUSTOM_PORTRAIT -> addCustomPortraitSettings(sl)
             else -> {
                 fragmentView.showToastMessage("Unimplemented menu", false)
                 return
@@ -101,6 +109,23 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
         }
         settingsList = sl
         fragmentView.showSettingsList(settingsList!!)
+    }
+
+    /** Returns the portrait mode width */
+    private fun getWidth(): Int {
+        val dm = Resources.getSystem().displayMetrics;
+        return if (dm.widthPixels < dm.heightPixels)
+            dm.widthPixels
+        else
+            dm.heightPixels
+    }
+
+    private fun getHeight(): Int {
+        val dm = Resources.getSystem().displayMetrics;
+        return if (dm.widthPixels < dm.heightPixels)
+            dm.heightPixels
+        else
+            dm.widthPixels
     }
 
     private fun addConfigSettings(sl: ArrayList<SettingsItem>) {
@@ -148,6 +173,14 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
             )
             add(
                 SubmenuSetting(
+                    R.string.preferences_layout,
+                    0,
+                    R.drawable.ic_fit_screen,
+                    Settings.SECTION_LAYOUT
+                )
+            )
+            add(
+                SubmenuSetting(
                     R.string.preferences_audio,
                     0,
                     R.drawable.ic_audio,
@@ -162,6 +195,7 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
                     Settings.SECTION_DEBUG
                 )
             )
+
             add(
                 RunnableSetting(
                     R.string.reset_to_default,
@@ -619,14 +653,12 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
                 add(InputBindingSetting(button, Settings.axisTitles[i]))
             }
 
-            // TODO: Improve the integration of the two dpad types to be
-            //       less user-facingly hacky
-            add(HeaderSetting(R.string.controller_dpad_axis))
+            add(HeaderSetting(R.string.controller_dpad_axis,R.string.controller_dpad_axis_description))
             Settings.dPadAxisKeys.forEachIndexed { i: Int, key: String ->
                 val button = getInputObject(key)
                 add(InputBindingSetting(button, Settings.axisTitles[i]))
             }
-            add(HeaderSetting(R.string.controller_dpad_button))
+            add(HeaderSetting(R.string.controller_dpad_button,R.string.controller_dpad_button_description))
             Settings.dPadButtonKeys.forEachIndexed { i: Int, key: String ->
                 val button = getInputObject(key)
                 add(InputBindingSetting(button, Settings.dpadTitles[i]))
@@ -860,7 +892,7 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
             )
 
             // Disabled until custom texture implementation gets rewrite, current one overloads RAM
-            // and crashes Citra.
+            // and crashes Lime3DS.
             // add(
             //     SwitchSetting(
             //         BooleanSetting.PRELOAD_TEXTURES,
@@ -871,6 +903,294 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
             //     )
             // )
         }
+    }
+
+    private fun addLayoutSettings(sl: ArrayList<SettingsItem>) {
+        settingsActivity.setToolbarTitle(settingsActivity.getString(R.string.preferences_layout))
+        sl.apply {
+            add(
+                SingleChoiceSetting(
+                    IntSetting.ORIENTATION_OPTION,
+                    R.string.layout_screen_orientation,
+                    0,
+                    R.array.screenOrientations,
+                    R.array.screenOrientationValues,
+                    IntSetting.ORIENTATION_OPTION.key,
+                    IntSetting.ORIENTATION_OPTION.defaultValue
+                )
+            )
+            add(
+                SingleChoiceSetting(
+                    IntSetting.SCREEN_LAYOUT,
+                    R.string.emulation_switch_screen_layout,
+                    0,
+                    R.array.landscapeLayouts,
+                    R.array.landscapeLayoutValues,
+                    IntSetting.SCREEN_LAYOUT.key,
+                    IntSetting.SCREEN_LAYOUT.defaultValue
+                )
+            )
+            add(
+                SingleChoiceSetting(
+                    IntSetting.PORTRAIT_SCREEN_LAYOUT,
+                    R.string.emulation_switch_portrait_layout,
+                    0,
+                    R.array.portraitLayouts,
+                    R.array.portraitLayoutValues,
+                    IntSetting.PORTRAIT_SCREEN_LAYOUT.key,
+                    IntSetting.PORTRAIT_SCREEN_LAYOUT.defaultValue
+                )
+            )
+            add(
+                SingleChoiceSetting(
+                    IntSetting.SMALL_SCREEN_POSITION,
+                    R.string.emulation_small_screen_position,
+                    R.string.small_screen_position_description,
+                    R.array.smallScreenPositions,
+                    R.array.smallScreenPositionValues,
+                    IntSetting.SMALL_SCREEN_POSITION.key,
+                    IntSetting.SMALL_SCREEN_POSITION.defaultValue
+                )
+            )
+            add(
+                SliderSetting(
+                    FloatSetting.LARGE_SCREEN_PROPORTION,
+                    R.string.large_screen_proportion,
+                    R.string.large_screen_proportion_description,
+                    1,
+                    5,
+                    "",
+                    FloatSetting.LARGE_SCREEN_PROPORTION.key,
+                    FloatSetting.LARGE_SCREEN_PROPORTION.defaultValue
+                )
+            )
+            add(
+                SubmenuSetting(
+                    R.string.emulation_landscape_custom_layout,
+                    0,
+                    R.drawable.ic_fit_screen,
+                    Settings.SECTION_CUSTOM_LANDSCAPE
+                )
+            )
+            add(
+                SubmenuSetting(
+                    R.string.emulation_portrait_custom_layout,
+                    0,
+                    R.drawable.ic_portrait_fit_screen,
+                    Settings.SECTION_CUSTOM_PORTRAIT
+                )
+            )
+        }
+    }
+
+    private fun addCustomLandscapeSettings(sl: ArrayList<SettingsItem>) {
+        settingsActivity.setToolbarTitle(settingsActivity.getString(R.string.emulation_landscape_custom_layout))
+        sl.apply {
+            add(HeaderSetting(R.string.emulation_top_screen))
+            add(
+                SliderSetting(
+                    IntSetting.LANDSCAPE_TOP_X,
+                    R.string.emulation_custom_layout_x,
+                    0,
+                    0,
+                    getHeight(),
+                    "px",
+                    IntSetting.LANDSCAPE_TOP_X.key,
+                    IntSetting.LANDSCAPE_TOP_X.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.LANDSCAPE_TOP_Y,
+                    R.string.emulation_custom_layout_y,
+                    0,
+                    0,
+                    getWidth(),
+                    "px",
+                    IntSetting.LANDSCAPE_TOP_Y.key,
+                    IntSetting.LANDSCAPE_TOP_Y.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.LANDSCAPE_TOP_WIDTH,
+                    R.string.emulation_custom_layout_width,
+                    0,
+                    0,
+                    getHeight(),
+                    "px",
+                    IntSetting.LANDSCAPE_TOP_WIDTH.key,
+                    IntSetting.LANDSCAPE_TOP_WIDTH.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.LANDSCAPE_TOP_HEIGHT,
+                    R.string.emulation_custom_layout_height,
+                    0,
+                    0,
+                    getWidth(),
+                    "px",
+                    IntSetting.LANDSCAPE_TOP_HEIGHT.key,
+                    IntSetting.LANDSCAPE_TOP_HEIGHT.defaultValue.toFloat()
+                )
+            )
+            add(HeaderSetting(R.string.emulation_bottom_screen))
+            add(
+                SliderSetting(
+                    IntSetting.LANDSCAPE_BOTTOM_X,
+                    R.string.emulation_custom_layout_x,
+                    0,
+                    0,
+                    getHeight(),
+                    "px",
+                    IntSetting.LANDSCAPE_BOTTOM_X.key,
+                    IntSetting.LANDSCAPE_BOTTOM_X.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.LANDSCAPE_BOTTOM_Y,
+                    R.string.emulation_custom_layout_y,
+                    0,
+                    0,
+                    getWidth(),
+                    "px",
+                    IntSetting.LANDSCAPE_BOTTOM_Y.key,
+                    IntSetting.LANDSCAPE_BOTTOM_Y.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.LANDSCAPE_BOTTOM_WIDTH,
+                    R.string.emulation_custom_layout_width,
+                    0,
+                    0,
+                    getHeight(),
+                    "px",
+                    IntSetting.LANDSCAPE_BOTTOM_WIDTH.key,
+                    IntSetting.LANDSCAPE_BOTTOM_WIDTH.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.LANDSCAPE_BOTTOM_HEIGHT,
+                    R.string.emulation_custom_layout_height,
+                    0,
+                    0,
+                    getWidth(),
+                    "px",
+                    IntSetting.LANDSCAPE_BOTTOM_HEIGHT.key,
+                    IntSetting.LANDSCAPE_BOTTOM_HEIGHT.defaultValue.toFloat()
+                )
+            )
+        }
+
+    }
+
+    private fun addCustomPortraitSettings(sl: ArrayList<SettingsItem>) {
+        settingsActivity.setToolbarTitle(settingsActivity.getString(R.string.emulation_portrait_custom_layout))
+        sl.apply {
+            add(HeaderSetting(R.string.emulation_top_screen))
+            add(
+                SliderSetting(
+                    IntSetting.PORTRAIT_TOP_X,
+                    R.string.emulation_custom_layout_x,
+                    0,
+                    0,
+                    getWidth(),
+                    "px",
+                    IntSetting.PORTRAIT_TOP_X.key,
+                    IntSetting.PORTRAIT_TOP_X.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.PORTRAIT_TOP_Y,
+                    R.string.emulation_custom_layout_y,
+                    0,
+                    0,
+                    getHeight(),
+                    "px",
+                    IntSetting.PORTRAIT_TOP_Y.key,
+                    IntSetting.PORTRAIT_TOP_Y.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.PORTRAIT_TOP_WIDTH,
+                    R.string.emulation_custom_layout_width,
+                    0,
+                    0,
+                    getWidth(),
+                    "px",
+                    IntSetting.PORTRAIT_TOP_WIDTH.key,
+                    IntSetting.PORTRAIT_TOP_WIDTH.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.PORTRAIT_TOP_HEIGHT,
+                    R.string.emulation_custom_layout_height,
+                    0,
+                    0,
+                    getHeight(),
+                    "px",
+                    IntSetting.PORTRAIT_TOP_HEIGHT.key,
+                    IntSetting.PORTRAIT_TOP_HEIGHT.defaultValue.toFloat()
+                )
+            )
+            add(HeaderSetting(R.string.emulation_bottom_screen))
+            add(
+                SliderSetting(
+                    IntSetting.PORTRAIT_BOTTOM_X,
+                    R.string.emulation_custom_layout_x,
+                    0,
+                    0,
+                    getWidth(),
+                    "px",
+                    IntSetting.PORTRAIT_BOTTOM_X.key,
+                    IntSetting.PORTRAIT_BOTTOM_X.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.PORTRAIT_BOTTOM_Y,
+                    R.string.emulation_custom_layout_y,
+                    0,
+                    0,
+                    getHeight(),
+                    "px",
+                    IntSetting.PORTRAIT_BOTTOM_Y.key,
+                    IntSetting.PORTRAIT_BOTTOM_Y.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.PORTRAIT_BOTTOM_WIDTH,
+                    R.string.emulation_custom_layout_width,
+                    0,
+                    0,
+                    getWidth(),
+                    "px",
+                    IntSetting.PORTRAIT_BOTTOM_WIDTH.key,
+                    IntSetting.PORTRAIT_BOTTOM_WIDTH.defaultValue.toFloat()
+                )
+            )
+            add(
+                SliderSetting(
+                    IntSetting.PORTRAIT_BOTTOM_HEIGHT,
+                    R.string.emulation_custom_layout_height,
+                    0,
+                    0,
+                    getHeight(),
+                    "px",
+                    IntSetting.PORTRAIT_BOTTOM_HEIGHT.key,
+                    IntSetting.PORTRAIT_BOTTOM_HEIGHT.defaultValue.toFloat()
+                )
+            )
+        }
+
     }
 
     private fun addAudioSettings(sl: ArrayList<SettingsItem>) {
@@ -1042,6 +1362,33 @@ class SettingsFragmentPresenter(private val fragmentView: SettingsFragmentView) 
                     )
                 )
             }
+
+            val staticThemeColor: AbstractIntSetting = object : AbstractIntSetting {
+                override var int: Int
+                    get() = preferences.getInt(Settings.PREF_STATIC_THEME_COLOR, 0)
+                    set(value) {
+                        preferences.edit()
+                            .putInt(Settings.PREF_STATIC_THEME_COLOR, value)
+                            .apply()
+                        settingsActivity.recreate()
+                    }
+                override val key: String? = null
+                override val section: String? = null
+                override val isRuntimeEditable: Boolean = false
+                override val valueAsString: String
+                    get() = preferences.getInt(Settings.PREF_STATIC_THEME_COLOR, 0).toString()
+                override val defaultValue: Any = 0
+            }
+
+            add(
+                SingleChoiceSetting(
+                    staticThemeColor,
+                    R.string.static_theme_color,
+                    R.string.static_theme_color_description,
+                    R.array.staticThemeNames,
+                    R.array.staticThemeValues
+                )
+            )
 
             val themeMode: AbstractIntSetting = object : AbstractIntSetting {
                 override var int: Int

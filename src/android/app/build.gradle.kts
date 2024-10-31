@@ -1,4 +1,4 @@
-// Copyright 2023 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -10,7 +10,7 @@ plugins {
     id("org.jetbrains.kotlin.android")
     id("de.undercouch.download") version "5.6.0"
     id("kotlin-parcelize")
-    kotlin("plugin.serialization") version "2.0.0"
+    kotlin("plugin.serialization") version "2.0.20"
     id("androidx.navigation.safeargs.kotlin")
 }
 
@@ -28,8 +28,9 @@ val downloadedJniLibsPath = "${buildDir}/downloadedJniLibs"
 android {
     namespace = "io.github.lime3ds.android"
 
-    compileSdkVersion = "android-34"
-    ndkVersion = "26.3.11579264"
+    compileSdkVersion = "android-35"
+    buildToolsVersion = "35.0.0"
+    ndkVersion = "27.1.12297006"
 
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_17
@@ -63,7 +64,7 @@ android {
         // TODO If this is ever modified, change application_id in strings.xml
         applicationId = "io.github.lime3ds.android"
         minSdk = 28
-        targetSdk = 34
+        targetSdk = 35
         versionCode = autoVersion
         versionName = getGitVersion()
 
@@ -77,7 +78,8 @@ android {
                 arguments(
                     "-DENABLE_QT=0", // Don't use QT
                     "-DENABLE_SDL2=0", // Don't use SDL
-                    "-DANDROID_ARM_NEON=true" // cryptopp requires Neon to work
+                    "-DANDROID_ARM_NEON=true", // cryptopp requires Neon to work
+                    "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON" // Support Android 15 16KiB page sizes
                 )
             }
         }
@@ -162,29 +164,29 @@ android {
 }
 
 dependencies {
-    implementation("androidx.recyclerview:recyclerview:1.3.2")
-    implementation("androidx.activity:activity-ktx:1.8.2")
-    implementation("androidx.fragment:fragment-ktx:1.7.1")
-    implementation("androidx.appcompat:appcompat:1.6.1")
-    implementation("androidx.documentfile:documentfile:1.0.1")
-    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0")
-    implementation("androidx.slidingpanelayout:slidingpanelayout:1.2.0")
-    implementation("com.google.android.material:material:1.9.0")
+    implementation("androidx.activity:activity-ktx:1.9.2")
+    implementation("androidx.appcompat:appcompat:1.7.0")
     implementation("androidx.core:core-splashscreen:1.0.1")
-    implementation("androidx.work:work-runtime:2.9.0")
-    implementation("org.ini4j:ini4j:0.5.4")
-    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
-    implementation("androidx.navigation:navigation-fragment-ktx:2.7.7")
-    implementation("androidx.navigation:navigation-ui-ktx:2.7.7")
-    implementation("info.debatty:java-string-similarity:2.0.0")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.3")
+    implementation("androidx.documentfile:documentfile:1.0.1")
+    implementation("androidx.fragment:fragment-ktx:1.8.3")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.5")
+    implementation("androidx.navigation:navigation-fragment-ktx:2.8.0")
+    implementation("androidx.navigation:navigation-ui-ktx:2.8.0")
     implementation("androidx.preference:preference-ktx:1.2.1")
-    implementation("io.coil-kt:coil:2.6.0")
+    implementation("androidx.recyclerview:recyclerview:1.3.2")
+    implementation("androidx.slidingpanelayout:slidingpanelayout:1.2.0")
+    implementation("androidx.swiperefreshlayout:swiperefreshlayout:1.1.0")
+    implementation("androidx.work:work-runtime:2.9.1")
+    implementation("com.google.android.material:material:1.9.0")
+    implementation("info.debatty:java-string-similarity:2.0.0")
+    implementation("io.coil-kt:coil:2.7.0")
+    implementation("org.ini4j:ini4j:0.5.4")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.7.2")
 }
 
 // Download Vulkan Validation Layers from the KhronosGroup GitHub.
 val downloadVulkanValidationLayers = tasks.register<Download>("downloadVulkanValidationLayers") {
-    src("https://github.com/KhronosGroup/Vulkan-ValidationLayers/releases/download/vulkan-sdk-1.3.283.0/android-binaries-1.3.283.0.zip")
+    src("https://github.com/KhronosGroup/Vulkan-ValidationLayers/releases/download/vulkan-sdk-1.3.290.0/android-binaries-1.3.290.0.zip")
     dest(file("${buildDir}/tmp/Vulkan-ValidationLayers.zip"))
     onlyIfModified(true)
 }
@@ -266,6 +268,11 @@ android.applicationVariants.configureEach {
             project.copy {
                 from(variant.outputs.first().outputFile.parentFile)
                 include("*.apk")
+                into(layout.buildDirectory.dir("bundle"))
+            }
+            project.copy {
+                from(layout.buildDirectory.dir("outputs/bundle/${variant.name}"))
+                include("*.aab")
                 into(layout.buildDirectory.dir("bundle"))
             }
         }

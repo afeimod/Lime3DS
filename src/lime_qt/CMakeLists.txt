@@ -7,7 +7,7 @@ if (POLICY CMP0071)
     cmake_policy(SET CMP0071 NEW)
 endif()
 
-add_executable(lime-qt
+add_library(lime_qt STATIC EXCLUDE_FROM_ALL
     aboutdialog.cpp
     aboutdialog.h
     aboutdialog.ui
@@ -27,10 +27,6 @@ add_executable(lime-qt
     camera/qt_camera_base.h
     camera/qt_multimedia_camera.cpp
     camera/qt_multimedia_camera.h
-    lime-qt.rc
-    compatdb.cpp
-    compatdb.h
-    compatdb.ui
     configuration/config.cpp
     configuration/config.h
     configuration/configure.ui
@@ -139,11 +135,11 @@ add_executable(lime-qt
     game_list_worker.h
     hotkeys.cpp
     hotkeys.h
+    lime_qt.cpp
+    lime_qt.h
     loading_screen.cpp
     loading_screen.h
     loading_screen.ui
-    main.cpp
-    main.h
     main.ui
     movie/movie_play_dialog.cpp
     movie/movie_play_dialog.h
@@ -194,8 +190,6 @@ add_executable(lime-qt
     util/util.h
 )
 
-set_target_properties(lime-qt PROPERTIES OUTPUT_NAME "lime3ds-gui")
-
 file(GLOB COMPAT_LIST
      ${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.qrc
      ${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.json)
@@ -203,35 +197,35 @@ file(GLOB_RECURSE ICONS ${PROJECT_SOURCE_DIR}/dist/icons/*)
 file(GLOB_RECURSE THEMES ${PROJECT_SOURCE_DIR}/dist/qt_themes/*)
 
 if (ENABLE_QT_UPDATER)
-    target_sources(lime-qt PRIVATE
+    target_sources(lime_qt PRIVATE
         updater/updater.cpp
         updater/updater.h
         updater/updater_p.h
     )
-    target_compile_definitions(lime-qt PUBLIC ENABLE_QT_UPDATER)
+    target_compile_definitions(lime_qt PUBLIC ENABLE_QT_UPDATER)
 endif()
 
 if (ENABLE_QT_TRANSLATION)
-    set(CITRA_QT_LANGUAGES "${PROJECT_SOURCE_DIR}/dist/languages" CACHE PATH "Path to the translation bundle for the Qt frontend")
+    set(LIME3DS_QT_LANGUAGES "${PROJECT_SOURCE_DIR}/dist/languages" CACHE PATH "Path to the translation bundle for the Qt frontend")
     option(GENERATE_QT_TRANSLATION "Generate en.ts as the translation source file" OFF)
 
     # Update source TS file if enabled
     if (GENERATE_QT_TRANSLATION)
-        get_target_property(QT_SRCS lime-qt SOURCES)
-        get_target_property(QT_INCLUDES lime-qt INCLUDE_DIRECTORIES)
-        qt_add_lupdate(lime-qt TS_FILES ${CITRA_QT_LANGUAGES}/en.ts
+        get_target_property(QT_SRCS lime_qt SOURCES)
+        get_target_property(QT_INCLUDES lime_qt INCLUDE_DIRECTORIES)
+        qt_add_lupdate(lime_qt TS_FILES ${LIME3DS_QT_LANGUAGES}/en.ts
             SOURCES ${QT_SRCS} ${UIS}
             INCLUDE_DIRECTORIES ${QT_INCLUDES}
             NO_GLOBAL_TARGET)
-        add_custom_target(translation ALL DEPENDS lime-qt_lupdate)
+        add_custom_target(translation ALL DEPENDS lime_qt_lupdate)
     endif()
 
     # Find all TS files except en.ts
-    file(GLOB_RECURSE LANGUAGES_TS ${CITRA_QT_LANGUAGES}/*.ts)
-    list(REMOVE_ITEM LANGUAGES_TS ${CITRA_QT_LANGUAGES}/en.ts)
+    file(GLOB_RECURSE LANGUAGES_TS ${LIME3DS_QT_LANGUAGES}/*.ts)
+    list(REMOVE_ITEM LANGUAGES_TS ${LIME3DS_QT_LANGUAGES}/en.ts)
 
     # Compile TS files to QM files
-    qt_add_lrelease(lime-qt TS_FILES ${LANGUAGES_TS} NO_GLOBAL_TARGET QM_FILES_OUTPUT_VARIABLE LANGUAGES_QM)
+    qt_add_lrelease(lime_qt TS_FILES ${LANGUAGES_TS} NO_GLOBAL_TARGET QM_FILES_OUTPUT_VARIABLE LANGUAGES_QM)
 
     # Build a QRC file from the QM file list
     set(LANGUAGES_QRC ${CMAKE_CURRENT_BINARY_DIR}/languages.qrc)
@@ -248,7 +242,7 @@ else()
     set(LANGUAGES)
 endif()
 
-target_sources(lime-qt
+target_sources(lime_qt
     PRIVATE
         ${COMPAT_LIST}
         ${ICONS}
@@ -256,66 +250,38 @@ target_sources(lime-qt
         ${THEMES}
 )
 
-if (APPLE)
-    set(DIST_DIR "../../dist/apple")
-    set(APPLE_RESOURCES
-        "${DIST_DIR}/lime.icns"
-        "${DIST_DIR}/LaunchScreen.storyboard"
-        "${DIST_DIR}/launch_logo.png"
-    )
-    target_sources(lime-qt PRIVATE ${APPLE_RESOURCES})
-
-    # Define app bundle metadata.
-    include(GenerateBuildInfo)
-    set_target_properties(lime-qt PROPERTIES
-        MACOSX_BUNDLE TRUE
-        MACOSX_BUNDLE_INFO_PLIST "${DIST_DIR}/Info.plist.in"
-        MACOSX_BUNDLE_BUNDLE_NAME "Lime3DS"
-        MACOSX_BUNDLE_GUI_IDENTIFIER "io.github.lime3ds.Lime3DS"
-        MACOSX_BUNDLE_BUNDLE_VERSION "${BUILD_VERSION}"
-        MACOSX_BUNDLE_SHORT_VERSION_STRING "${BUILD_FULLNAME}"
-        MACOSX_BUNDLE_LONG_VERSION_STRING "${BUILD_FULLNAME}"
-        MACOSX_BUNDLE_ICON_FILE "lime.icns"
-        RESOURCE "${APPLE_RESOURCES}"
-    )
-elseif(WIN32)
-    # compile as a win32 gui application instead of a console application
-    target_link_libraries(lime-qt PRIVATE Qt6::EntryPointImplementation)
-    if(MSVC)
-        set_target_properties(lime-qt PROPERTIES LINK_FLAGS_RELEASE "/SUBSYSTEM:WINDOWS")
-    elseif(MINGW)
-        set_target_properties(lime-qt PROPERTIES LINK_FLAGS_RELEASE "-mwindows")
-    endif()
+if (WIN32)
+    target_link_libraries(lime_qt PRIVATE Qt6::EntryPointImplementation)
 endif()
 
 if(ENABLE_SDL2)
-    target_link_libraries(lime-qt PRIVATE SDL2::SDL2)
-    target_compile_definitions(lime-qt PRIVATE HAVE_SDL2)
+    target_link_libraries(lime_qt PRIVATE SDL2::SDL2)
+    target_compile_definitions(lime_qt PRIVATE HAVE_SDL2)
 endif()
 
-create_target_directory_groups(lime-qt)
+create_target_directory_groups(lime_qt)
 
-target_link_libraries(lime-qt PRIVATE audio_core lime_common lime_core input_common network video_core)
-target_link_libraries(lime-qt PRIVATE Boost::boost nihstro-headers Qt6::Widgets Qt6::Multimedia Qt6::Concurrent)
-target_link_libraries(lime-qt PRIVATE ${PLATFORM_LIBRARIES} Threads::Threads)
+target_link_libraries(lime_qt PRIVATE audio_core lime_common lime_core input_common network video_core)
+target_link_libraries(lime_qt PRIVATE Boost::boost nihstro-headers Qt6::Widgets Qt6::Multimedia Qt6::Concurrent)
+target_link_libraries(lime_qt PRIVATE ${PLATFORM_LIBRARIES} Threads::Threads)
 
 if (ENABLE_OPENGL)
-    target_link_libraries(lime-qt PRIVATE glad)
+    target_link_libraries(lime_qt PRIVATE glad)
 endif()
 
 if (ENABLE_VULKAN)
-    target_link_libraries(lime-qt PRIVATE vulkan-headers)
+    target_link_libraries(lime_qt PRIVATE vulkan-headers)
 endif()
 
 if (NOT WIN32)
-    target_include_directories(lime-qt PRIVATE ${Qt6Gui_PRIVATE_INCLUDE_DIRS})
+    target_include_directories(lime_qt PRIVATE ${Qt6Gui_PRIVATE_INCLUDE_DIRS})
 endif()
 
 if (UNIX AND NOT APPLE)
-    target_link_libraries(lime-qt PRIVATE Qt6::DBus gamemode)
+    target_link_libraries(lime_qt PRIVATE Qt6::DBus gamemode)
 endif()
 
-target_compile_definitions(lime-qt PRIVATE
+target_compile_definitions(lime_qt PRIVATE
     # Use QStringBuilder for string concatenation to reduce
     # the overall number of temporary strings created.
     -DQT_USE_QSTRINGBUILDER
@@ -334,33 +300,19 @@ target_compile_definitions(lime-qt PRIVATE
     -DQT_NO_CAST_TO_ASCII
 )
 
-if (CITRA_ENABLE_COMPATIBILITY_REPORTING)
-    target_compile_definitions(lime-qt PRIVATE -DCITRA_ENABLE_COMPATIBILITY_REPORTING)
-endif()
-
 if (USE_DISCORD_PRESENCE)
-    target_sources(lime-qt PUBLIC
+    target_sources(lime_qt PUBLIC
         discord_impl.cpp
         discord_impl.h
     )
-    target_link_libraries(lime-qt PRIVATE discord-rpc)
-    target_compile_definitions(lime-qt PRIVATE -DUSE_DISCORD_PRESENCE)
+    target_link_libraries(lime_qt PRIVATE discord-rpc)
+    target_compile_definitions(lime_qt PRIVATE -DUSE_DISCORD_PRESENCE)
 endif()
 
 if (ENABLE_WEB_SERVICE)
-    target_link_libraries(lime-qt PRIVATE web_service)
+    target_link_libraries(lime_qt PRIVATE web_service)
 endif()
 
-if(UNIX AND NOT APPLE)
-    install(TARGETS lime-qt RUNTIME DESTINATION "${CMAKE_INSTALL_PREFIX}/bin")
-endif()
-
-if (CITRA_USE_PRECOMPILED_HEADERS)
-    target_precompile_headers(lime-qt PRIVATE precompiled_headers.h)
-endif()
-
-# Bundle in-place on MSVC so dependencies can be resolved by builds.
-if (MSVC)
-    include(BundleTarget)
-    bundle_target_in_place(lime-qt)
+if (LIME3DS_USE_PRECOMPILED_HEADERS)
+    target_precompile_headers(lime_qt PRIVATE precompiled_headers.h)
 endif()

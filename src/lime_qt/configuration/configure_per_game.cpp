@@ -31,7 +31,7 @@ ConfigurePerGame::ConfigurePerGame(QWidget* parent, u64 title_id_, const QString
       filename{file_name.toStdString()}, title_id{title_id_}, system{system_} {
     const auto config_file_name = title_id == 0 ? std::string(FileUtil::GetFilename(filename))
                                                 : fmt::format("{:016X}", title_id);
-    game_config = std::make_unique<Config>(config_file_name, Config::ConfigType::PerGameConfig);
+    game_config = std::make_unique<QtConfig>(config_file_name, QtConfig::ConfigType::PerGameConfig);
 
     const bool is_powered_on = system.IsPoweredOn();
     audio_tab = std::make_unique<ConfigureAudio>(is_powered_on, this);
@@ -81,7 +81,8 @@ ConfigurePerGame::~ConfigurePerGame() = default;
 void ConfigurePerGame::ResetDefaults() {
     const auto config_file_name = title_id == 0 ? filename : fmt::format("{:016X}", title_id);
     QMessageBox::StandardButton answer = QMessageBox::question(
-        this, tr("Citra"), tr("Are you sure you want to <b>reset your settings for this game</b>?"),
+        this, tr("Lime3DS"),
+        tr("Are you sure you want to <b>reset your settings for this game</b>?"),
         QMessageBox::Yes | QMessageBox::No, QMessageBox::No);
 
     if (answer == QMessageBox::No) {

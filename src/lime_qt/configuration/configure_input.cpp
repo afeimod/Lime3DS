@@ -1,4 +1,4 @@
-// Copyright 2016 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -25,6 +25,10 @@ const std::array<std::string, ConfigureInput::ANALOG_SUB_BUTTONS_NUM>
         "down",
         "left",
         "right",
+        "up_left",
+        "up_right",
+        "down_left",
+        "down_right",
         "modifier",
     }};
 
@@ -33,6 +37,10 @@ enum class AnalogSubButtons {
     down,
     left,
     right,
+    up_left,
+    up_right,
+    down_left,
+    down_right,
     modifier,
 };
 
@@ -172,6 +180,10 @@ ConfigureInput::ConfigureInput(Core::System& _system, QWidget* parent)
             ui->buttonCircleDown,
             ui->buttonCircleLeft,
             ui->buttonCircleRight,
+            ui->buttonCircleUpLeft,
+            ui->buttonCircleUpRight,
+            ui->buttonCircleDownLeft,
+            ui->buttonCircleDownRight,
             nullptr,
         },
         {
@@ -179,6 +191,10 @@ ConfigureInput::ConfigureInput(Core::System& _system, QWidget* parent)
             ui->buttonCStickDown,
             ui->buttonCStickLeft,
             ui->buttonCStickRight,
+            ui->buttonCStickUpLeft,
+            ui->buttonCStickUpRight,
+            ui->buttonCStickDownLeft,
+            ui->buttonCStickDownRight,
             nullptr,
         },
     }};
@@ -228,8 +244,9 @@ ConfigureInput::ConfigureInput(Core::System& _system, QWidget* parent)
                         Settings::SaveProfile(ui->profile->currentIndex());
                     });
                     context_menu.addAction(tr("Restore Default"), this, [&] {
-                        buttons_param[button_id] = Common::ParamPackage{
-                            InputCommon::GenerateKeyboardParam(Config::default_buttons[button_id])};
+                        buttons_param[button_id] =
+                            Common::ParamPackage{InputCommon::GenerateKeyboardParam(
+                                QtConfig::default_buttons[button_id])};
                         button_map[button_id]->setText(ButtonToText(buttons_param[button_id]));
                         ApplyConfiguration();
                         Settings::SaveProfile(ui->profile->currentIndex());
@@ -268,7 +285,7 @@ ConfigureInput::ConfigureInput(Core::System& _system, QWidget* parent)
                         });
                         context_menu.addAction(tr("Restore Default"), this, [&] {
                             Common::ParamPackage params{InputCommon::GenerateKeyboardParam(
-                                Config::default_analogs[analog_id][sub_button_id])};
+                                QtConfig::default_analogs[analog_id][sub_button_id])};
                             SetAnalogButton(params, analogs_param[analog_id],
                                             analog_sub_buttons[sub_button_id]);
                             analog_map_buttons[analog_id][sub_button_id]->setText(AnalogToText(
@@ -347,8 +364,8 @@ ConfigureInput::ConfigureInput(Core::System& _system, QWidget* parent)
                     for (int analog_id = 0; analog_id < Settings::NativeAnalog::NumAnalogs;
                          analog_id++) {
                         Common::ParamPackage params{InputCommon::GenerateKeyboardParam(
-                            Config::default_analogs[analog_id]
-                                                   [static_cast<u32>(AnalogSubButtons::modifier)])};
+                            QtConfig::default_analogs[analog_id][static_cast<u32>(
+                                AnalogSubButtons::modifier)])};
                         SetAnalogButton(params, analogs_param[analog_id], "modifier");
                         ui->buttonCircleMod->setText(
                             AnalogToText(analogs_param[analog_id], "modifier"));
@@ -464,16 +481,14 @@ void ConfigureInput::LoadConfiguration() {
 void ConfigureInput::RestoreDefaults() {
     for (int button_id = 0; button_id < Settings::NativeButton::NumButtons; button_id++) {
         buttons_param[button_id] = Common::ParamPackage{
-            InputCommon::GenerateKeyboardParam(Config::default_buttons[button_id])};
+            InputCommon::GenerateKeyboardParam(QtConfig::default_buttons[button_id])};
     }
 
     for (int analog_id = 0; analog_id < Settings::NativeAnalog::NumAnalogs; analog_id++) {
-        for (int sub_button_id = 0; sub_button_id < ANALOG_SUB_BUTTONS_NUM; sub_button_id++) {
-            Common::ParamPackage params{InputCommon::GenerateKeyboardParam(
-                Config::default_analogs[analog_id][sub_button_id])};
-            SetAnalogButton(params, analogs_param[analog_id], analog_sub_buttons[sub_button_id]);
-        }
-        analogs_param[analog_id].Set("modifier_scale", 0.5f);
+        analogs_param[analog_id] = Common::ParamPackage{InputCommon::GenerateAnalogParamFromKeys(
+            QtConfig::default_analogs[analog_id][0], QtConfig::default_analogs[analog_id][1],
+            QtConfig::default_analogs[analog_id][2], QtConfig::default_analogs[analog_id][3],
+            QtConfig::default_analogs[analog_id][4], 0.5f)};
     }
     UpdateButtonLabels();
 

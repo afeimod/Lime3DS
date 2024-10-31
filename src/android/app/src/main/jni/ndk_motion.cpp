@@ -1,3 +1,7 @@
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
+// Licensed under GPLv2 or any later version
+// Refer to the license.txt file included.
+
 #include <chrono>
 #include <thread>
 
@@ -82,7 +86,7 @@ class NDKMotion final : public Input::MotionDevice {
     }
 
     void Update() const {
-        ALooper_pollAll(0, nullptr, nullptr, nullptr);
+        ALooper_pollOnce(0, nullptr, nullptr, nullptr);
         ASensorEvent event{};
         std::optional<Vec3<float>> new_accel{}, new_rot{};
         while (ASensorEventQueue_getEvents(event_queue, &event, 1) > 0) {

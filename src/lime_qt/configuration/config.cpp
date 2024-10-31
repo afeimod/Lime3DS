@@ -1,4 +1,4 @@
-// Copyright 2014 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -15,24 +15,24 @@
 #include "network/network.h"
 #include "network/network_settings.h"
 
-Config::Config(const std::string& config_name, ConfigType config_type) : type{config_type} {
+QtConfig::QtConfig(const std::string& config_name, ConfigType config_type) : type{config_type} {
     global = config_type == ConfigType::GlobalConfig;
     Initialize(config_name);
 }
 
-Config::~Config() {
+QtConfig::~QtConfig() {
     if (global) {
         Save();
     }
 }
 
-const std::array<int, Settings::NativeButton::NumButtons> Config::default_buttons = {
+const std::array<int, Settings::NativeButton::NumButtons> QtConfig::default_buttons = {
     Qt::Key_A, Qt::Key_S, Qt::Key_Z, Qt::Key_X, Qt::Key_T, Qt::Key_G,
     Qt::Key_F, Qt::Key_H, Qt::Key_Q, Qt::Key_W, Qt::Key_M, Qt::Key_N,
     Qt::Key_O, Qt::Key_P, Qt::Key_1, Qt::Key_2, Qt::Key_B, Qt::Key_V,
 };
 
-const std::array<std::array<int, 5>, Settings::NativeAnalog::NumAnalogs> Config::default_analogs{{
+const std::array<std::array<int, 5>, Settings::NativeAnalog::NumAnalogs> QtConfig::default_analogs{{
     {
         Qt::Key_Up,
         Qt::Key_Down,
@@ -54,7 +54,7 @@ const std::array<std::array<int, 5>, Settings::NativeAnalog::NumAnalogs> Config:
 // This must be in alphabetical order according to action name as it must have the same order as
 // UISetting::values.shortcuts, which is alphabetically ordered.
 // clang-format off
-const std::array<UISettings::Shortcut, 35> Config::default_hotkeys {{
+const std::array<UISettings::Shortcut, 35> QtConfig::default_hotkeys {{
      {QStringLiteral("Advance Frame"),            QStringLiteral("Main Window"), {QStringLiteral(""),       Qt::ApplicationShortcut}},
      {QStringLiteral("Audio Mute/Unmute"),        QStringLiteral("Main Window"), {QStringLiteral("Ctrl+M"), Qt::WindowShortcut}},
      {QStringLiteral("Audio Volume Down"),        QStringLiteral("Main Window"), {QStringLiteral(""),       Qt::WindowShortcut}},
@@ -93,7 +93,7 @@ const std::array<UISettings::Shortcut, 35> Config::default_hotkeys {{
     }};
 // clang-format on
 
-void Config::Initialize(const std::string& config_name) {
+void QtConfig::Initialize(const std::string& config_name) {
     const std::string fs_config_loc = FileUtil::GetUserPath(FileUtil::UserPath::ConfigDir);
     const std::string config_file = fmt::format("{}.ini", config_name);
 
@@ -120,7 +120,7 @@ void Config::Initialize(const std::string& config_name) {
 // Explicit std::string definition: Qt can't implicitly convert a std::string to a QVariant, nor
 // can it implicitly convert a QVariant back to a {std::,Q}string
 template <>
-void Config::ReadBasicSetting(Settings::Setting<std::string>& setting) {
+void QtConfig::ReadBasicSetting(Settings::Setting<std::string>& setting) {
     const QString name = QString::fromStdString(setting.GetLabel());
     const auto default_value = QString::fromStdString(setting.GetDefault());
     if (qt_config->value(name + QStringLiteral("/default"), false).toBool()) {
@@ -131,7 +131,7 @@ void Config::ReadBasicSetting(Settings::Setting<std::string>& setting) {
 }
 
 template <typename Type, bool ranged>
-void Config::ReadBasicSetting(Settings::Setting<Type, ranged>& setting) {
+void QtConfig::ReadBasicSetting(Settings::Setting<Type, ranged>& setting) {
     const QString name = QString::fromStdString(setting.GetLabel());
     const Type default_value = setting.GetDefault();
     if (qt_config->value(name + QStringLiteral("/default"), false).toBool()) {
@@ -150,7 +150,7 @@ void Config::ReadBasicSetting(Settings::Setting<Type, ranged>& setting) {
 }
 
 template <typename Type, bool ranged>
-void Config::ReadGlobalSetting(Settings::SwitchableSetting<Type, ranged>& setting) {
+void QtConfig::ReadGlobalSetting(Settings::SwitchableSetting<Type, ranged>& setting) {
     QString name = QString::fromStdString(setting.GetLabel());
     const bool use_global = qt_config->value(name + QStringLiteral("/use_global"), true).toBool();
     setting.SetGlobal(use_global);
@@ -168,7 +168,7 @@ void Config::ReadGlobalSetting(Settings::SwitchableSetting<Type, ranged>& settin
 }
 
 template <>
-void Config::ReadGlobalSetting(Settings::SwitchableSetting<std::string>& setting) {
+void QtConfig::ReadGlobalSetting(Settings::SwitchableSetting<std::string>& setting) {
     QString name = QString::fromStdString(setting.GetLabel());
     const bool use_global = qt_config->value(name + QStringLiteral("/use_global"), true).toBool();
     setting.SetGlobal(use_global);
@@ -181,7 +181,7 @@ void Config::ReadGlobalSetting(Settings::SwitchableSetting<std::string>& setting
 
 // Explicit std::string definition: Qt can't implicitly convert a std::string to a QVariant
 template <>
-void Config::WriteBasicSetting(const Settings::Setting<std::string>& setting) {
+void QtConfig::WriteBasicSetting(const Settings::Setting<std::string>& setting) {
     const QString name = QString::fromStdString(setting.GetLabel());
     const std::string& value = setting.GetValue();
     qt_config->setValue(name + QStringLiteral("/default"), value == setting.GetDefault());
@@ -190,7 +190,7 @@ void Config::WriteBasicSetting(const Settings::Setting<std::string>& setting) {
 
 // Explicit u16 definition: Qt would store it as QMetaType otherwise, which is not human-readable
 template <>
-void Config::WriteBasicSetting(const Settings::Setting<u16>& setting) {
+void QtConfig::WriteBasicSetting(const Settings::Setting<u16>& setting) {
     const QString name = QString::fromStdString(setting.GetLabel());
     const u16& value = setting.GetValue();
     qt_config->setValue(name + QStringLiteral("/default"), value == setting.GetDefault());
@@ -198,7 +198,7 @@ void Config::WriteBasicSetting(const Settings::Setting<u16>& setting) {
 }
 
 template <typename Type, bool ranged>
-void Config::WriteBasicSetting(const Settings::Setting<Type, ranged>& setting) {
+void QtConfig::WriteBasicSetting(const Settings::Setting<Type, ranged>& setting) {
     const QString name = QString::fromStdString(setting.GetLabel());
     const Type value = setting.GetValue();
     qt_config->setValue(name + QStringLiteral("/default"), value == setting.GetDefault());
@@ -210,7 +210,7 @@ void Config::WriteBasicSetting(const Settings::Setting<Type, ranged>& setting) {
 }
 
 template <typename Type, bool ranged>
-void Config::WriteGlobalSetting(const Settings::SwitchableSetting<Type, ranged>& setting) {
+void QtConfig::WriteGlobalSetting(const Settings::SwitchableSetting<Type, ranged>& setting) {
     const QString name = QString::fromStdString(setting.GetLabel());
     const Type& value = setting.GetValue(global);
     if (!global) {
@@ -227,7 +227,7 @@ void Config::WriteGlobalSetting(const Settings::SwitchableSetting<Type, ranged>&
 }
 
 template <>
-void Config::WriteGlobalSetting(const Settings::SwitchableSetting<std::string>& setting) {
+void QtConfig::WriteGlobalSetting(const Settings::SwitchableSetting<std::string>& setting) {
     const QString name = QString::fromStdString(setting.GetLabel());
     const std::string& value = setting.GetValue(global);
     if (!global) {
@@ -241,7 +241,7 @@ void Config::WriteGlobalSetting(const Settings::SwitchableSetting<std::string>& 
 
 // Explicit u16 definition: Qt would store it as QMetaType otherwise, which is not human-readable
 template <>
-void Config::WriteGlobalSetting(const Settings::SwitchableSetting<u16, true>& setting) {
+void QtConfig::WriteGlobalSetting(const Settings::SwitchableSetting<u16, true>& setting) {
     const QString name = QString::fromStdString(setting.GetLabel());
     const u16& value = setting.GetValue(global);
     if (!global) {
@@ -253,7 +253,7 @@ void Config::WriteGlobalSetting(const Settings::SwitchableSetting<u16, true>& se
     }
 }
 
-void Config::ReadValues() {
+void QtConfig::ReadValues() {
     if (global) {
         ReadControlValues();
         ReadCameraValues();
@@ -273,7 +273,7 @@ void Config::ReadValues() {
     ReadUtilityValues();
 }
 
-void Config::ReadAudioValues() {
+void QtConfig::ReadAudioValues() {
     qt_config->beginGroup(QStringLiteral("Audio"));
 
     ReadGlobalSetting(Settings::values.audio_emulation);
@@ -291,7 +291,7 @@ void Config::ReadAudioValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadCameraValues() {
+void QtConfig::ReadCameraValues() {
     using namespace Service::CAM;
     qt_config->beginGroup(QStringLiteral("Camera"));
 
@@ -325,7 +325,7 @@ void Config::ReadCameraValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadControlValues() {
+void QtConfig::ReadControlValues() {
     qt_config->beginGroup(QStringLiteral("Controls"));
 
     ReadBasicSetting(Settings::values.use_artic_base_controller);
@@ -382,10 +382,11 @@ void Config::ReadControlValues() {
             std::string default_param = InputCommon::GenerateAnalogParamFromKeys(
                 default_analogs[i][0], default_analogs[i][1], default_analogs[i][2],
                 default_analogs[i][3], default_analogs[i][4], 0.5f);
-            profile.analogs[i] = ReadSetting(QString::fromUtf8(Settings::NativeAnalog::mapping[i]),
-                                             QString::fromStdString(default_param))
-                                     .toString()
-                                     .toStdString();
+            profile.analogs[i] =
+                ReadSetting(QString::fromStdString(Settings::NativeAnalog::mapping[i]),
+                            QString::fromStdString(default_param))
+                    .toString()
+                    .toStdString();
             if (profile.analogs[i].empty())
                 profile.analogs[i] = default_param;
         }
@@ -442,7 +443,7 @@ void Config::ReadControlValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadUtilityValues() {
+void QtConfig::ReadUtilityValues() {
     qt_config->beginGroup(QStringLiteral("Utility"));
 
     ReadGlobalSetting(Settings::values.dump_textures);
@@ -453,7 +454,7 @@ void Config::ReadUtilityValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadCoreValues() {
+void QtConfig::ReadCoreValues() {
     qt_config->beginGroup(QStringLiteral("Core"));
 
     ReadGlobalSetting(Settings::values.cpu_clock_percentage);
@@ -466,7 +467,7 @@ void Config::ReadCoreValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadDataStorageValues() {
+void QtConfig::ReadDataStorageValues() {
     qt_config->beginGroup(QStringLiteral("Data Storage"));
 
     ReadBasicSetting(Settings::values.use_virtual_sd);
@@ -485,7 +486,7 @@ void Config::ReadDataStorageValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadDebuggingValues() {
+void QtConfig::ReadDebuggingValues() {
     qt_config->beginGroup(QStringLiteral("Debugging"));
 
     // Intentionally not using the QT default setting as this is intended to be changed in the ini
@@ -505,7 +506,7 @@ void Config::ReadDebuggingValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadLayoutValues() {
+void QtConfig::ReadLayoutValues() {
     qt_config->beginGroup(QStringLiteral("Layout"));
 
     ReadGlobalSetting(Settings::values.render_3d);
@@ -517,11 +518,10 @@ void Config::ReadLayoutValues() {
     ReadGlobalSetting(Settings::values.swap_screen);
     ReadGlobalSetting(Settings::values.upright_screen);
     ReadGlobalSetting(Settings::values.large_screen_proportion);
+    ReadGlobalSetting(Settings::values.small_screen_position);
 
     if (global) {
         ReadBasicSetting(Settings::values.mono_render_option);
-
-        ReadBasicSetting(Settings::values.custom_layout);
         ReadBasicSetting(Settings::values.custom_top_x);
         ReadBasicSetting(Settings::values.custom_top_y);
         ReadBasicSetting(Settings::values.custom_top_width);
@@ -538,12 +538,21 @@ void Config::ReadLayoutValues() {
         ReadBasicSetting(Settings::values.screen_bottom_stretch);
         ReadBasicSetting(Settings::values.screen_bottom_leftright_padding);
         ReadBasicSetting(Settings::values.screen_bottom_topbottom_padding);
+        ReadBasicSetting(Settings::values.portrait_layout_option);
+        ReadBasicSetting(Settings::values.custom_portrait_top_x);
+        ReadBasicSetting(Settings::values.custom_portrait_top_y);
+        ReadBasicSetting(Settings::values.custom_portrait_top_width);
+        ReadBasicSetting(Settings::values.custom_portrait_top_height);
+        ReadBasicSetting(Settings::values.custom_portrait_bottom_x);
+        ReadBasicSetting(Settings::values.custom_portrait_bottom_y);
+        ReadBasicSetting(Settings::values.custom_portrait_bottom_width);
+        ReadBasicSetting(Settings::values.custom_portrait_bottom_height);
     }
 
     qt_config->endGroup();
 }
 
-void Config::ReadMiscellaneousValues() {
+void QtConfig::ReadMiscellaneousValues() {
     qt_config->beginGroup(QStringLiteral("Miscellaneous"));
 
     ReadBasicSetting(Settings::values.log_filter);
@@ -552,7 +561,7 @@ void Config::ReadMiscellaneousValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadMultiplayerValues() {
+void QtConfig::ReadMultiplayerValues() {
     qt_config->beginGroup(QStringLiteral("Multiplayer"));
 
     UISettings::values.nickname = ReadSetting(QStringLiteral("nickname"), QString{}).toString();
@@ -603,7 +612,7 @@ void Config::ReadMultiplayerValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadPathValues() {
+void QtConfig::ReadPathValues() {
     qt_config->beginGroup(QStringLiteral("Paths"));
 
     ReadGlobalSetting(UISettings::values.screenshot_path);
@@ -655,7 +664,7 @@ void Config::ReadPathValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadRendererValues() {
+void QtConfig::ReadRendererValues() {
     qt_config->beginGroup(QStringLiteral("Renderer"));
 
     ReadGlobalSetting(Settings::values.graphics_api);
@@ -684,7 +693,7 @@ void Config::ReadRendererValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadShortcutValues() {
+void QtConfig::ReadShortcutValues() {
     qt_config->beginGroup(QStringLiteral("Shortcuts"));
 
     for (const auto& [name, group, shortcut] : default_hotkeys) {
@@ -705,7 +714,7 @@ void Config::ReadShortcutValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadSystemValues() {
+void QtConfig::ReadSystemValues() {
     qt_config->beginGroup(QStringLiteral("System"));
 
     ReadGlobalSetting(Settings::values.is_new_3ds);
@@ -731,7 +740,7 @@ const QString DEFAULT_VIDEO_ENCODER_OPTIONS =
     QStringLiteral("quality:realtime,speed:6,tile-columns:4,frame-parallel:1,threads:8,row-mt:1");
 const QString DEFAULT_AUDIO_ENCODER_OPTIONS = QStringLiteral("");
 
-void Config::ReadVideoDumpingValues() {
+void QtConfig::ReadVideoDumpingValues() {
     qt_config->beginGroup(QStringLiteral("VideoDumping"));
 
     Settings::values.output_format =
@@ -768,7 +777,7 @@ void Config::ReadVideoDumpingValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadUIValues() {
+void QtConfig::ReadUIValues() {
     qt_config->beginGroup(QStringLiteral("UI"));
 
     ReadPathValues();
@@ -804,7 +813,7 @@ void Config::ReadUIValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadUIGameListValues() {
+void QtConfig::ReadUIGameListValues() {
     qt_config->beginGroup(QStringLiteral("GameList"));
 
     ReadBasicSetting(UISettings::values.game_list_icon_size);
@@ -830,7 +839,7 @@ void Config::ReadUIGameListValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadUILayoutValues() {
+void QtConfig::ReadUILayoutValues() {
     qt_config->beginGroup(QStringLiteral("UILayout"));
 
     UISettings::values.geometry = ReadSetting(QStringLiteral("geometry")).toByteArray();
@@ -846,7 +855,7 @@ void Config::ReadUILayoutValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadUpdaterValues() {
+void QtConfig::ReadUpdaterValues() {
     qt_config->beginGroup(QStringLiteral("Updater"));
 
     ReadBasicSetting(UISettings::values.check_for_update_on_start);
@@ -855,22 +864,22 @@ void Config::ReadUpdaterValues() {
     qt_config->endGroup();
 }
 
-void Config::ReadWebServiceValues() {
+void QtConfig::ReadWebServiceValues() {
     qt_config->beginGroup(QStringLiteral("WebService"));
 
     NetSettings::values.web_api_url =
         ReadSetting(QStringLiteral("web_api_url"), QStringLiteral("https://api.citra-emu.org"))
             .toString()
             .toStdString();
-    NetSettings::values.citra_username =
-        ReadSetting(QStringLiteral("citra_username")).toString().toStdString();
-    NetSettings::values.citra_token =
-        ReadSetting(QStringLiteral("citra_token")).toString().toStdString();
+    NetSettings::values.lime3ds_username =
+        ReadSetting(QStringLiteral("lime3ds_username")).toString().toStdString();
+    NetSettings::values.lime3ds_token =
+        ReadSetting(QStringLiteral("lime3ds_token")).toString().toStdString();
 
     qt_config->endGroup();
 }
 
-void Config::SaveValues() {
+void QtConfig::SaveValues() {
     if (global) {
         SaveControlValues();
         SaveCameraValues();
@@ -891,7 +900,7 @@ void Config::SaveValues() {
     qt_config->sync();
 }
 
-void Config::SaveAudioValues() {
+void QtConfig::SaveAudioValues() {
     qt_config->beginGroup(QStringLiteral("Audio"));
 
     WriteGlobalSetting(Settings::values.audio_emulation);
@@ -909,7 +918,7 @@ void Config::SaveAudioValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveCameraValues() {
+void QtConfig::SaveCameraValues() {
     using namespace Service::CAM;
     qt_config->beginGroup(QStringLiteral("Camera"));
 
@@ -939,7 +948,7 @@ void Config::SaveCameraValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveControlValues() {
+void QtConfig::SaveControlValues() {
     qt_config->beginGroup(QStringLiteral("Controls"));
 
     WriteBasicSetting(Settings::values.use_artic_base_controller);
@@ -1000,7 +1009,7 @@ void Config::SaveControlValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveUtilityValues() {
+void QtConfig::SaveUtilityValues() {
     qt_config->beginGroup(QStringLiteral("Utility"));
 
     WriteGlobalSetting(Settings::values.dump_textures);
@@ -1011,7 +1020,7 @@ void Config::SaveUtilityValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveCoreValues() {
+void QtConfig::SaveCoreValues() {
     qt_config->beginGroup(QStringLiteral("Core"));
 
     WriteGlobalSetting(Settings::values.cpu_clock_percentage);
@@ -1024,7 +1033,7 @@ void Config::SaveCoreValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveDataStorageValues() {
+void QtConfig::SaveDataStorageValues() {
     qt_config->beginGroup(QStringLiteral("Data Storage"));
 
     WriteBasicSetting(Settings::values.use_virtual_sd);
@@ -1039,7 +1048,7 @@ void Config::SaveDataStorageValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveDebuggingValues() {
+void QtConfig::SaveDebuggingValues() {
     qt_config->beginGroup(QStringLiteral("Debugging"));
 
     // Intentionally not using the QT default setting as this is intended to be changed in the ini
@@ -1057,7 +1066,7 @@ void Config::SaveDebuggingValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveLayoutValues() {
+void QtConfig::SaveLayoutValues() {
     qt_config->beginGroup(QStringLiteral("Layout"));
 
     WriteGlobalSetting(Settings::values.render_3d);
@@ -1069,11 +1078,9 @@ void Config::SaveLayoutValues() {
     WriteGlobalSetting(Settings::values.swap_screen);
     WriteGlobalSetting(Settings::values.upright_screen);
     WriteGlobalSetting(Settings::values.large_screen_proportion);
-
+    WriteGlobalSetting(Settings::values.small_screen_position);
     if (global) {
         WriteBasicSetting(Settings::values.mono_render_option);
-
-        WriteBasicSetting(Settings::values.custom_layout);
         WriteBasicSetting(Settings::values.custom_top_x);
         WriteBasicSetting(Settings::values.custom_top_y);
         WriteBasicSetting(Settings::values.custom_top_width);
@@ -1090,12 +1097,20 @@ void Config::SaveLayoutValues() {
         WriteBasicSetting(Settings::values.screen_bottom_stretch);
         WriteBasicSetting(Settings::values.screen_bottom_leftright_padding);
         WriteBasicSetting(Settings::values.screen_bottom_topbottom_padding);
+        WriteBasicSetting(Settings::values.custom_portrait_top_x);
+        WriteBasicSetting(Settings::values.custom_portrait_top_y);
+        WriteBasicSetting(Settings::values.custom_portrait_top_width);
+        WriteBasicSetting(Settings::values.custom_portrait_top_height);
+        WriteBasicSetting(Settings::values.custom_portrait_bottom_x);
+        WriteBasicSetting(Settings::values.custom_portrait_bottom_y);
+        WriteBasicSetting(Settings::values.custom_portrait_bottom_width);
+        WriteBasicSetting(Settings::values.custom_portrait_bottom_height);
     }
 
     qt_config->endGroup();
 }
 
-void Config::SaveMiscellaneousValues() {
+void QtConfig::SaveMiscellaneousValues() {
     qt_config->beginGroup(QStringLiteral("Miscellaneous"));
 
     WriteBasicSetting(Settings::values.log_filter);
@@ -1104,7 +1119,7 @@ void Config::SaveMiscellaneousValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveMultiplayerValues() {
+void QtConfig::SaveMultiplayerValues() {
     qt_config->beginGroup(QStringLiteral("Multiplayer"));
 
     WriteSetting(QStringLiteral("nickname"), UISettings::values.nickname, QString{});
@@ -1147,7 +1162,7 @@ void Config::SaveMultiplayerValues() {
     qt_config->endGroup();
 }
 
-void Config::SavePathValues() {
+void QtConfig::SavePathValues() {
     qt_config->beginGroup(QStringLiteral("Paths"));
 
     WriteGlobalSetting(UISettings::values.screenshot_path);
@@ -1175,7 +1190,7 @@ void Config::SavePathValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveRendererValues() {
+void QtConfig::SaveRendererValues() {
     qt_config->beginGroup(QStringLiteral("Renderer"));
 
     WriteGlobalSetting(Settings::values.graphics_api);
@@ -1205,7 +1220,7 @@ void Config::SaveRendererValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveShortcutValues() {
+void QtConfig::SaveShortcutValues() {
     qt_config->beginGroup(QStringLiteral("Shortcuts"));
 
     // Lengths of UISettings::values.shortcuts & default_hotkeys are same.
@@ -1225,7 +1240,7 @@ void Config::SaveShortcutValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveSystemValues() {
+void QtConfig::SaveSystemValues() {
     qt_config->beginGroup(QStringLiteral("System"));
 
     WriteGlobalSetting(Settings::values.is_new_3ds);
@@ -1245,7 +1260,7 @@ void Config::SaveSystemValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveVideoDumpingValues() {
+void QtConfig::SaveVideoDumpingValues() {
     qt_config->beginGroup(QStringLiteral("VideoDumping"));
 
     WriteSetting(QStringLiteral("output_format"),
@@ -1272,7 +1287,7 @@ void Config::SaveVideoDumpingValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveUIValues() {
+void QtConfig::SaveUIValues() {
     qt_config->beginGroup(QStringLiteral("UI"));
 
     SavePathValues();
@@ -1307,7 +1322,7 @@ void Config::SaveUIValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveUIGameListValues() {
+void QtConfig::SaveUIGameListValues() {
     qt_config->beginGroup(QStringLiteral("GameList"));
 
     WriteBasicSetting(UISettings::values.game_list_icon_size);
@@ -1333,7 +1348,7 @@ void Config::SaveUIGameListValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveUILayoutValues() {
+void QtConfig::SaveUILayoutValues() {
     qt_config->beginGroup(QStringLiteral("UILayout"));
 
     WriteSetting(QStringLiteral("geometry"), UISettings::values.geometry);
@@ -1347,7 +1362,7 @@ void Config::SaveUILayoutValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveUpdaterValues() {
+void QtConfig::SaveUpdaterValues() {
     qt_config->beginGroup(QStringLiteral("Updater"));
 
     WriteBasicSetting(UISettings::values.check_for_update_on_start);
@@ -1356,25 +1371,25 @@ void Config::SaveUpdaterValues() {
     qt_config->endGroup();
 }
 
-void Config::SaveWebServiceValues() {
+void QtConfig::SaveWebServiceValues() {
     qt_config->beginGroup(QStringLiteral("WebService"));
 
     WriteSetting(QStringLiteral("web_api_url"),
                  QString::fromStdString(NetSettings::values.web_api_url),
                  QStringLiteral("https://api.citra-emu.org"));
-    WriteSetting(QStringLiteral("citra_username"),
-                 QString::fromStdString(NetSettings::values.citra_username));
-    WriteSetting(QStringLiteral("citra_token"),
-                 QString::fromStdString(NetSettings::values.citra_token));
+    WriteSetting(QStringLiteral("lime3ds_username"),
+                 QString::fromStdString(NetSettings::values.lime3ds_username));
+    WriteSetting(QStringLiteral("lime3ds_token"),
+                 QString::fromStdString(NetSettings::values.lime3ds_token));
 
     qt_config->endGroup();
 }
 
-QVariant Config::ReadSetting(const QString& name) const {
+QVariant QtConfig::ReadSetting(const QString& name) const {
     return qt_config->value(name);
 }
 
-QVariant Config::ReadSetting(const QString& name, const QVariant& default_value) const {
+QVariant QtConfig::ReadSetting(const QString& name, const QVariant& default_value) const {
     QVariant result;
     if (qt_config->value(name + QStringLiteral("/default"), false).toBool()) {
         result = default_value;
@@ -1384,22 +1399,22 @@ QVariant Config::ReadSetting(const QString& name, const QVariant& default_value)
     return result;
 }
 
-void Config::WriteSetting(const QString& name, const QVariant& value) {
+void QtConfig::WriteSetting(const QString& name, const QVariant& value) {
     qt_config->setValue(name, value);
 }
 
-void Config::WriteSetting(const QString& name, const QVariant& value,
-                          const QVariant& default_value) {
+void QtConfig::WriteSetting(const QString& name, const QVariant& value,
+                            const QVariant& default_value) {
     qt_config->setValue(name + QStringLiteral("/default"), value == default_value);
     qt_config->setValue(name, value);
 }
 
-void Config::Reload() {
+void QtConfig::Reload() {
     ReadValues();
     // To apply default value changes
     SaveValues();
 }
 
-void Config::Save() {
+void QtConfig::Save() {
     SaveValues();
 }

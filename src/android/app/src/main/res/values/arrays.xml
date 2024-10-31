@@ -11,6 +11,56 @@
         <item>1</item>
     </integer-array>
 
+    <string-array name="landscapeLayouts">
+        <item>@string/emulation_screen_layout_largescreen</item>
+        <item>@string/emulation_screen_layout_single</item>
+        <item>@string/emulation_screen_layout_sidebyside</item>
+        <item>@string/emulation_screen_layout_hybrid</item>
+        <item>@string/emulation_screen_layout_original</item>
+        <item>@string/emulation_screen_layout_custom</item>
+    </string-array>
+    <!-- start with 2 because that is the Large Screen layout in cpp files -->
+    <integer-array name="landscapeLayoutValues">
+        <item>2</item>
+        <item>1</item>
+        <item>3</item>
+        <item>4</item>
+        <item>0</item>
+        <item>5</item>
+    </integer-array>
+
+    <string-array name="portraitLayouts">
+        <item>@string/emulation_portrait_layout_top_full</item>
+        <item>@string/emulation_screen_layout_custom</item>
+    </string-array>
+
+    <integer-array name="portraitLayoutValues">
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+
+    <string-array name="smallScreenPositions">
+        <item>@string/small_screen_position_top_right</item>
+        <item>@string/small_screen_position_middle_right</item>
+        <item>@string/small_screen_position_bottom_right</item>
+        <item>@string/small_screen_position_top_left</item>
+        <item>@string/small_screen_position_middle_left</item>
+        <item>@string/small_screen_position_bottom_left</item>
+        <item>@string/small_screen_position_above</item>
+        <item>@string/small_screen_position_below</item>
+    </string-array>
+
+    <integer-array name="smallScreenPositionValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+    </integer-array>
+
     <string-array name="regionNames">
         <item>@string/auto_select</item>
         <item>@string/system_region_jpn</item>
@@ -138,6 +188,7 @@
     <string-array name="render3dModes">
         <item>@string/off</item>
         <item>@string/side_by_side</item>
+        <item>@string/reverse_side_by_side</item>
         <item>@string/anaglyph</item>
         <item>@string/interlaced</item>
         <item>@string/reverse_interlaced</item>
@@ -151,6 +202,7 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+        <item>6</item>
     </integer-array>
 
     <string-array name="graphicsApiNames">
@@ -179,6 +231,29 @@
         <item>3</item>
         <item>4</item>
         <item>5</item>
+    </integer-array>
+
+    <string-array name="staticThemeNames">
+        <item>Blue (Default)</item>
+        <item>Cyan</item>
+        <item>Red</item>
+        <item>Green</item>
+        <item>Yellow</item>
+        <item>Orange</item>
+        <item>Violet</item>
+        <item>Pink</item>
+        <item>Gray</item>
+    </string-array>
+    <integer-array name="staticThemeValues">
+        <item>0</item>
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
     </integer-array>
 
     <string-array name="themeModeEntries">
@@ -475,6 +550,34 @@
         <item>10</item>
         <item>11</item>
         <item>12</item>
+    </integer-array>
+
+    <integer-array name="landscapeValues">
+        <item>2</item>
+        <item>1</item>
+        <item>3</item>
+        <item>4</item>
+        <item>0</item>
+        <item>5</item>
+    </integer-array>
+    <integer-array name="portraitValues">
+        <item>0</item>
+        <item>1</item>
+    </integer-array>
+
+    <string-array name="screenOrientations">
+        <item>@string/layout_screen_orientation_auto_sensor</item>
+        <item>@string/layout_screen_orientation_landscape</item>
+        <item>@string/layout_screen_orientation_landscape_reverse</item>
+        <item>@string/layout_screen_orientation_portrait</item>
+        <item>@string/layout_screen_orientation_portrait_reverse</item>
+    </string-array>
+    <integer-array name="screenOrientationValues">
+        <item>2</item>
+        <item>0</item>
+        <item>8</item>
+        <item>1</item>
+        <item>9</item>
     </integer-array>
 
 </resources>

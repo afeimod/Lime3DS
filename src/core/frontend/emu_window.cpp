@@ -1,4 +1,4 @@
-// Copyright 2014 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -66,14 +66,17 @@ bool EmuWindow::IsWithinTouchscreen(const Layout::FramebufferLayout& layout, uns
     }
 #endif
 
-    if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::SideBySide) {
+    Settings::StereoRenderOption render_3d_mode = Settings::values.render_3d.GetValue();
+
+    if (render_3d_mode == Settings::StereoRenderOption::SideBySide ||
+        render_3d_mode == Settings::StereoRenderOption::ReverseSideBySide) {
         return (framebuffer_y >= layout.bottom_screen.top &&
                 framebuffer_y < layout.bottom_screen.bottom &&
                 ((framebuffer_x >= layout.bottom_screen.left / 2 &&
                   framebuffer_x < layout.bottom_screen.right / 2) ||
                  (framebuffer_x >= (layout.bottom_screen.left / 2) + (layout.width / 2) &&
                   framebuffer_x < (layout.bottom_screen.right / 2) + (layout.width / 2))));
-    } else if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::CardboardVR) {
+    } else if (render_3d_mode == Settings::StereoRenderOption::CardboardVR) {
         return (framebuffer_y >= layout.bottom_screen.top &&
                 framebuffer_y < layout.bottom_screen.bottom &&
                 ((framebuffer_x >= layout.bottom_screen.left &&
@@ -90,14 +93,18 @@ bool EmuWindow::IsWithinTouchscreen(const Layout::FramebufferLayout& layout, uns
 }
 
 std::tuple<unsigned, unsigned> EmuWindow::ClipToTouchScreen(unsigned new_x, unsigned new_y) const {
+    Settings::StereoRenderOption render_3d_mode = Settings::values.render_3d.GetValue();
+
     if (new_x >= framebuffer_layout.width / 2) {
-        if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::SideBySide)
+        if (render_3d_mode == Settings::StereoRenderOption::SideBySide ||
+            render_3d_mode == Settings::StereoRenderOption::ReverseSideBySide)
             new_x -= framebuffer_layout.width / 2;
-        else if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::CardboardVR)
+        else if (render_3d_mode == Settings::StereoRenderOption::CardboardVR)
             new_x -=
                 (framebuffer_layout.width / 2) - (framebuffer_layout.cardboard.user_x_shift * 2);
     }
-    if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::SideBySide) {
+    if (render_3d_mode == Settings::StereoRenderOption::SideBySide ||
+        render_3d_mode == Settings::StereoRenderOption::ReverseSideBySide) {
         new_x = std::max(new_x, framebuffer_layout.bottom_screen.left / 2);
         new_x = std::min(new_x, framebuffer_layout.bottom_screen.right / 2 - 1);
     } else {
@@ -122,18 +129,22 @@ void EmuWindow::CreateTouchState() {
 }
 
 bool EmuWindow::TouchPressed(unsigned framebuffer_x, unsigned framebuffer_y) {
+    Settings::StereoRenderOption render_3d_mode = Settings::values.render_3d.GetValue();
+
     if (!IsWithinTouchscreen(framebuffer_layout, framebuffer_x, framebuffer_y))
         return false;
 
     if (framebuffer_x >= framebuffer_layout.width / 2) {
-        if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::SideBySide)
+        if (render_3d_mode == Settings::StereoRenderOption::SideBySide ||
+            render_3d_mode == Settings::StereoRenderOption::ReverseSideBySide)
             framebuffer_x -= framebuffer_layout.width / 2;
-        else if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::CardboardVR)
+        else if (render_3d_mode == Settings::StereoRenderOption::CardboardVR)
             framebuffer_x -=
                 (framebuffer_layout.width / 2) - (framebuffer_layout.cardboard.user_x_shift * 2);
     }
     std::scoped_lock guard(touch_state->mutex);
-    if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::SideBySide) {
+    if (render_3d_mode == Settings::StereoRenderOption::SideBySide ||
+        render_3d_mode == Settings::StereoRenderOption::ReverseSideBySide) {
         touch_state->touch_x =
             static_cast<float>(framebuffer_x - framebuffer_layout.bottom_screen.left / 2) /
             (framebuffer_layout.bottom_screen.right / 2 -
@@ -176,20 +187,33 @@ void EmuWindow::TouchMoved(unsigned framebuffer_x, unsigned framebuffer_y) {
 void EmuWindow::UpdateCurrentFramebufferLayout(u32 width, u32 height, bool is_portrait_mode) {
     Layout::FramebufferLayout layout;
 
-    // If in portrait mode, only the MobilePortrait option really makes sense
-    const Settings::LayoutOption layout_option = is_portrait_mode
-                                                     ? Settings::LayoutOption::MobilePortrait
-                                                     : Settings::values.layout_option.GetValue();
-    const auto min_size =
-        Layout::GetMinimumSizeFromLayout(layout_option, Settings::values.upright_screen.GetValue());
+    const Settings::LayoutOption layout_option = Settings::values.layout_option.GetValue();
+    const Settings::PortraitLayoutOption portrait_layout_option =
+        Settings::values.portrait_layout_option.GetValue();
+    const auto min_size = is_portrait_mode
+                              ? Layout::GetMinimumSizeFromPortraitLayout()
+                              : Layout::GetMinimumSizeFromLayout(
+                                    layout_option, Settings::values.upright_screen.GetValue());
 
-    if (Settings::values.custom_layout.GetValue() == true) {
-        layout = Layout::CustomFrameLayout(width, height, Settings::values.swap_screen.GetValue());
+    width = std::max(width, min_size.first);
+    height = std::max(height, min_size.second);
+    if (is_portrait_mode) {
+        switch (portrait_layout_option) {
+        case Settings::PortraitLayoutOption::PortraitTopFullWidth:
+            layout = Layout::PortraitTopFullFrameLayout(width, height,
+                                                        Settings::values.swap_screen.GetValue());
+            break;
+        case Settings::PortraitLayoutOption::PortraitCustomLayout:
+            layout = Layout::CustomFrameLayout(
+                width, height, Settings::values.swap_screen.GetValue(), is_portrait_mode);
+            break;
+        }
     } else {
-        width = std::max(width, min_size.first);
-        height = std::max(height, min_size.second);
-
         switch (layout_option) {
+        case Settings::LayoutOption::CustomLayout:
+            layout = Layout::CustomFrameLayout(
+                width, height, Settings::values.swap_screen.GetValue(), is_portrait_mode);
+            break;
         case Settings::LayoutOption::SingleScreen:
             layout =
                 Layout::SingleFrameLayout(width, height, Settings::values.swap_screen.GetValue(),
@@ -200,7 +224,7 @@ void EmuWindow::UpdateCurrentFramebufferLayout(u32 width, u32 height, bool is_po
                 Layout::LargeFrameLayout(width, height, Settings::values.swap_screen.GetValue(),
                                          Settings::values.upright_screen.GetValue(),
                                          Settings::values.large_screen_proportion.GetValue(),
-                                         Layout::VerticalAlignment::Bottom);
+                                         Settings::values.small_screen_position.GetValue());
             break;
         case Settings::LayoutOption::HybridScreen:
             layout =
@@ -211,27 +235,12 @@ void EmuWindow::UpdateCurrentFramebufferLayout(u32 width, u32 height, bool is_po
             layout =
                 Layout::LargeFrameLayout(width, height, Settings::values.swap_screen.GetValue(),
                                          Settings::values.upright_screen.GetValue(), 1.0f,
-                                         Layout::VerticalAlignment::Bottom);
+                                         Settings::SmallScreenPosition::MiddleRight);
             break;
 #ifndef ANDROID
         case Settings::LayoutOption::SeparateWindows:
             layout = Layout::SeparateWindowsLayout(width, height, is_secondary,
                                                    Settings::values.upright_screen.GetValue());
-            break;
-#endif
-        case Settings::LayoutOption::MobilePortrait:
-            layout = Layout::MobilePortraitFrameLayout(width, height,
-                                                       Settings::values.swap_screen.GetValue());
-            break;
-        case Settings::LayoutOption::MobileLandscape:
-            layout =
-                Layout::LargeFrameLayout(width, height, Settings::values.swap_screen.GetValue(),
-                                         false, 2.25f, Layout::VerticalAlignment::Top);
-            break;
-#ifndef ANDROID // TODO: Implement custom layouts on Android
-        case Settings::LayoutOption::CustomLayout:
-            layout =
-                Layout::CustomFrameLayout(width, height, Settings::values.swap_screen.GetValue());
             break;
 #endif
         case Settings::LayoutOption::Default:
@@ -241,8 +250,9 @@ void EmuWindow::UpdateCurrentFramebufferLayout(u32 width, u32 height, bool is_po
                                            Settings::values.upright_screen.GetValue());
             break;
         }
-        UpdateMinimumWindowSize(min_size);
     }
+    UpdateMinimumWindowSize(min_size);
+
     if (Settings::values.render_3d.GetValue() == Settings::StereoRenderOption::CardboardVR) {
         layout = Layout::GetCardboardSettings(layout);
     }

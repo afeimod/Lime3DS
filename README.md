@@ -11,13 +11,20 @@
 ![Flathub Downloads](https://img.shields.io/flathub/downloads/io.github.lime3ds.Lime3DS?logo=Flathub&label=Flathub%20Downloads)
 ![](https://github.com/Lime3DS/Lime3DS/actions/workflows/build.yml/badge.svg)
 
-<b>Lime3DS</b> is a project which aims to revive and continue work on Citra, a popular open-source Nintendo 3DS emulator which ceased development.
+<b>Lime3DS</b> is a project which aims to revive and continue work on Citra, a popular open-source 3DS emulator which ceased development.
 
 # Installation
 
 ### Windows & MacOS
 
 Download the latest release from [Releases](https://github.com/Lime3DS/Lime3DS/releases).
+
+#### Windows Version Differences
+There is no emulation specific difference between the MSVC and MSYS2 versions of Lime3DS, they are just two different compilers used to create a Lime3DS executable. However, there are a few functional differences:
+* MSVC generates a smaller file
+* Microsoft developed [MSVC](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist) and is closed source while [MSYS2](https://www.msys2.org/) is open-source
+* MSVC requires the installation of [Microsoft Visual C++ runtime](https://learn.microsoft.com/en-us/cpp/windows/latest-supported-vc-redist), if not already installed, which can require a restart to finish the install. If you have issues with the Microsoft Visual C++ runtimes, you should try the MSYS2 install
+* There have been reports where MSVC has not worked while MSYS2 does
 
 ---
 ### Android

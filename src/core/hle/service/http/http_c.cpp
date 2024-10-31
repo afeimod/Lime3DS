@@ -381,10 +381,10 @@ void Context::MakeRequestNonSSL(httplib::Request& request, const URLInfo& url_in
 
     if (!client->send(request, response, error)) {
         LOG_ERROR(Service_HTTP, "Request failed: {}: {}", error, httplib::to_string(error));
-        state = RequestState::TimedOut;
+        state = RequestState::Completed;
     } else {
         LOG_DEBUG(Service_HTTP, "Request successful");
-        state = RequestState::ReadyToDownloadContent;
+        state = RequestState::ReceivingBody;
     }
 }
 
@@ -439,10 +439,10 @@ void Context::MakeRequestSSL(httplib::Request& request, const URLInfo& url_info,
 
     if (!client->send(request, response, error)) {
         LOG_ERROR(Service_HTTP, "Request failed: {}: {}", error, httplib::to_string(error));
-        state = RequestState::TimedOut;
+        state = RequestState::Completed;
     } else {
         LOG_DEBUG(Service_HTTP, "Request successful");
-        state = RequestState::ReadyToDownloadContent;
+        state = RequestState::ReceivingBody;
     }
 }
 
@@ -560,7 +560,7 @@ void HTTP_C::BeginRequest(Kernel::HLERequestContext& ctx) {
 
     Context& http_context = GetContext(context_handle);
 
-    // This should never happen in real hardware, but can happen on citra.
+    // This should never happen in real hardware, but can happen on lime3ds.
     if (http_context.uses_default_client_cert && !http_context.clcert_data->init) {
         LOG_ERROR(Service_HTTP, "Failed to begin HTTP request: client cert not found.");
         IPC::RequestBuilder rb = rp.MakeBuilder(1, 0);
@@ -598,7 +598,7 @@ void HTTP_C::BeginRequestAsync(Kernel::HLERequestContext& ctx) {
 
     Context& http_context = GetContext(context_handle);
 
-    // This should never happen in real hardware, but can happen on citra.
+    // This should never happen in real hardware, but can happen on lime3ds.
     if (http_context.uses_default_client_cert && !http_context.clcert_data->init) {
         LOG_ERROR(Service_HTTP, "Failed to begin HTTP request: client cert not found.");
         IPC::RequestBuilder rb = rp.MakeBuilder(1, 0);
@@ -696,6 +696,7 @@ void HTTP_C::ReceiveDataImpl(Kernel::HLERequestContext& ctx, bool timeout) {
                                               http_context.current_copied_data,
                                           0, remaining_data);
                 http_context.current_copied_data += remaining_data;
+                http_context.state = RequestState::Completed;
                 rb.Push(ResultSuccess);
             } else {
                 async_data->buffer->Write(http_context.response.body.data() +

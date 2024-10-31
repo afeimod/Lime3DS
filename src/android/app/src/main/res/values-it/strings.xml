@@ -67,7 +67,6 @@
     <string name="linear_filtering">Filtering Lineare</string>
     <string name="linear_filtering_description">Abilita il filtro lineare, che fa sembrare più smussata la grafica dei giochi.</string>
     <string name="texture_filter_name">Filtro Texture</string>
-    <string name="texture_filter_description">Migliora la grafica dei giochi applicando un filtro alle texture. I filtri supportati sono Anime4k Ultrafast, Bicubic, ScaleForce, e xBRZ freescale.</string>
     <string name="hw_shaders">Abilita le Shader Hardware</string>
     <string name="hw_shaders_description">Utilizza l\'hardware per emulare gli shader del 3DS. Se abilitato, le prestazioni dei giochi miglioreranno significativamente.</string>
     <string name="shaders_accurate_mul">Moltiplicazione Accurata</string>
@@ -152,7 +151,6 @@
     <string name="emulation_open_settings">Apri Impostazioni</string>
     <string name="emulation_open_cheats">Apri Trucchi</string>
     <string name="emulation_switch_screen_layout">Disposizione Schermo Orizzontale</string>
-    <string name="emulation_screen_layout_landscape">Default</string>
     <string name="emulation_screen_layout_portrait">Verticale</string>
     <string name="emulation_screen_layout_single">Schermo singolo</string>
     <string name="emulation_screen_layout_sidebyside">Affiancati</string>
@@ -211,7 +209,7 @@
     <string name="fatal_error">Errore Fatale</string>
     <string name="fatal_error_message">Consulta il log per i dettagli.\nContinuare con l\'emulazione potrebbe causare un crash.</string>
 
-    <!-- Disk shader cache -->
+    <!-- Disk Shader Cache -->
     <string name="preparing_shaders">Preparando le Shaders</string>
     <string name="building_shaders">Costruisco le Shaders</string>
 

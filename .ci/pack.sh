@@ -6,7 +6,7 @@ GITREV="`git show -s --format='%h'`"
 REV_NAME="lime3ds-$OS-$TARGET-$GITDATE-$GITREV"
 
 # Determine the name of the release being built.
-if [[ "$GITHUB_REF_TYPE" == "tag" ]]; then
+if [ "$GITHUB_REF_TYPE" = "tag" ]; then
     RELEASE_NAME=lime3ds-$GITHUB_REF_NAME
     REV_NAME="lime3ds-$GITHUB_REF_NAME-$OS-$TARGET"
 else
@@ -38,7 +38,7 @@ function pack_artifacts() {
     if [ "$OS" = "windows" ]; then
         ARCHIVE_FULL_NAME="$ARCHIVE_NAME.zip"
         powershell Compress-Archive "$REV_NAME" "$ARCHIVE_FULL_NAME"
-    elif [ "$OS" = "android" ]; then
+    elif [ "$OS" = "android" ] || [ "$OS" = "macos" ]; then
         ARCHIVE_FULL_NAME="$ARCHIVE_NAME.zip"
         zip -r "$ARCHIVE_FULL_NAME" "$REV_NAME"
     else
@@ -49,6 +49,11 @@ function pack_artifacts() {
      # Clean up created rev artifacts directory.
     rm -rf "$REV_NAME"
 }
+
+if [ "$OS" = "windows" ] && [ "$GITHUB_REF_TYPE" = "tag" ]; then
+    # Move the installer to the artifacts directory
+    mv src/installer/bin/*.exe artifacts/
+fi
 
 if [ -n "$UNPACKED" ]; then
     # Copy the artifacts to be uploaded unpacked.

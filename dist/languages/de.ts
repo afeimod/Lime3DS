@@ -288,115 +288,6 @@ Dies bannt sowohl den Forum-Nutzernamen, als auch die IP-Adresse.</translation>
     </message>
 </context>
 <context>
-    <name>CompatDB</name>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="20"/>
-        <source>Report Compatibility</source>
-        <translation>Kompatibilität übermitteln</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="27"/>
-        <location filename="../../src/lime_qt/compatdb.ui" line="63"/>
-        <source>Report Game Compatibility</source>
-        <translation>Kompatibilität des Spiels übermitteln</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="36"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;Should you choose to submit a test case to the &lt;/span&gt;&lt;a href=&quot;https://citra-emu.org/game/&quot;&gt;&lt;span style=&quot; font-size:10pt; text-decoration: underline; color:#0000ff;&quot;&gt;Lime3DS Compatibility List&lt;/span&gt;&lt;/a&gt;&lt;span style=&quot; font-size:10pt;&quot;&gt;, The following information will be collected and displayed on the site:&lt;/span&gt;&lt;/p&gt;&lt;ul style=&quot;margin-top: 0px; margin-bottom: 0px; margin-left: 0px; margin-right: 0px; -qt-list-indent: 1;&quot;&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Hardware Information (CPU / GPU / Operating System)&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;Which version of Lime3DS you are running&lt;/li&gt;&lt;li style=&quot; margin-top:12px; margin-bottom:12px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;The connected Citra account&lt;/li&gt;&lt;/ul&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="72"/>
-        <source>Perfect</source>
-        <translation>Perfekt</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="79"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Game functions flawlessly with no audio or graphical glitches.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spiel funktioniert einwandfrei, keine Audio- oder Grafikfehler.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="89"/>
-        <source>Great</source>
-        <translation>Großartig</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="96"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Game functions with minor graphical or audio glitches and is playable from start to finish. May require some workarounds.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spiel funktioniert mit kleineren Grafik- und Audiofehlern und ist von Anfang bis Ende spielbar. Eventuell sind Workarounds nötig.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="106"/>
-        <source>Okay</source>
-        <translation>Okay</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="113"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Game functions with major graphical or audio glitches, but game is playable from start to finish with workarounds.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spiel funktioniert mit größeren Grafik- und Audiofehlern, ist mit Workarounds aber bis zum Ende spielbar.</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="123"/>
-        <source>Bad</source>
-        <translation>Schlecht</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="130"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Game functions, but with major graphical or audio glitches. Unable to progress in specific areas due to glitches even with workarounds.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spiel funktioniert mit größeren Grafik- und Audiofehlern. Spielfortschritt ist aufgrund von Glitches aber an manchen Stellen unmöglich.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="140"/>
-        <source>Intro/Menu</source>
-        <translation>Intro/Menü</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="147"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Game is completely unplayable due to major graphical or audio glitches. Unable to progress past the Start Screen.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Spiel ist wegen schwerwiegenden Grafik- und Audiofehlern unspielbar. Lediglich der Startbildschirm des Spiels funktioniert.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="157"/>
-        <source>Won&apos;t Boot</source>
-        <translation>Startet nicht</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="170"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;The game crashes when attempting to startup.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Das Spiel stürzt beim Versuch, es zu starten ab.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="182"/>
-        <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Independent of speed or performance, how well does this game play from start to finish on this version of Lime?&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.ui" line="206"/>
-        <source>Thank you for your submission!</source>
-        <translation>Vielen Dank für Ihren Beitrag!</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.cpp" line="55"/>
-        <source>Submitting</source>
-        <translation>Übertragen</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.cpp" line="66"/>
-        <source>Communication error</source>
-        <translation>Kommunikationsfehler</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.cpp" line="67"/>
-        <source>An error occurred while sending the Testcase</source>
-        <translation>Beim Senden des Testfalles ist ein Fehler aufgetreten</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/compatdb.cpp" line="69"/>
-        <source>Next</source>
-        <translation>Weiter</translation>
-    </message>
-</context>
-<context>
     <name>ConfigureAudio</name>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_audio.ui" line="17"/>
@@ -690,17 +581,17 @@ Dies bannt sowohl den Forum-Nutzernamen, als auch die IP-Adresse.</translation>
         <translation>Für Vorschau klicken</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_camera.cpp" line="192"/>
+        <location filename="../../src/lime_qt/configuration/configure_camera.cpp" line="197"/>
         <source>Resolution: %1*%2</source>
         <translation>Auflösung: %1*%2</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_camera.cpp" line="284"/>
+        <location filename="../../src/lime_qt/configuration/configure_camera.cpp" line="289"/>
         <source>Supported image files (%1)</source>
         <translation>Unterstützte Bilddateien (%1)</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_camera.cpp" line="285"/>
+        <location filename="../../src/lime_qt/configuration/configure_camera.cpp" line="290"/>
         <source>Open File</source>
         <translation>Datei öffnen</translation>
     </message>
@@ -709,7 +600,7 @@ Dies bannt sowohl den Forum-Nutzernamen, als auch die IP-Adresse.</translation>
     <name>ConfigureCheats</name>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_cheats.ui" line="23"/>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="68"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="73"/>
         <source>Cheats</source>
         <translation>Cheats</translation>
     </message>
@@ -759,37 +650,37 @@ Dies bannt sowohl den Forum-Nutzernamen, als auch die IP-Adresse.</translation>
         <translation>Code:</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="68"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="73"/>
         <source>Would you like to save the current cheat?</source>
         <translation>Möchtest du den aktuellen Cheat speichern?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="80"/>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="84"/>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="96"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="85"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="89"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="101"/>
         <source>Save Cheat</source>
         <translation>Cheat speichern</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="80"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="85"/>
         <source>Please enter a cheat name.</source>
         <translation>Bitte geben sie einen Cheat-Namen ein.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="84"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="89"/>
         <source>Please enter the cheat code.</source>
         <translation>Bitte geben sie den Cheat-Code ein.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="97"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="102"/>
         <source>Cheat code line %1 is not valid.
 Would you like to ignore the error and continue?</source>
         <translation>Cheat-Code Zeile %1 ist ungültig.
 Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="224"/>
-        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="227"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="229"/>
+        <location filename="../../src/lime_qt/configuration/configure_cheats.cpp" line="232"/>
         <source>[new cheat]</source>
         <translation>[neuer Cheat]</translation>
     </message>
@@ -1125,18 +1016,18 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="189"/>
-        <source>Nearest Neighbor</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="194"/>
         <source>ScaleForce</source>
         <translation>ScaleForce</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="199"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="194"/>
         <source>xBRZ</source>
         <translation>xBRZ</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="199"/>
+        <source>MMPX</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="213"/>
@@ -1160,86 +1051,91 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="239"/>
-        <source>Anaglyph</source>
+        <source>Reverse Side by Side</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="244"/>
-        <source>Interlaced</source>
+        <source>Anaglyph</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="249"/>
+        <source>Interlaced</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="254"/>
         <source>Reverse Interlaced</source>
         <translation>Umgekehrt interlaced</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="261"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="266"/>
         <source>Depth</source>
         <translation>Tiefe</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="268"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="273"/>
         <source>%</source>
         <translation>%</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="288"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="293"/>
         <source>Eye to Render in Monoscopic Mode</source>
         <translation>Auge zum Rendern im Monoskopischen Modus</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="296"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="301"/>
         <source>Left Eye (default)</source>
         <translation>Linkes Auge (Voreinstellung)</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="301"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="306"/>
         <source>Right Eye</source>
         <translation>Rechtes Auge</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="314"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="319"/>
         <source>Utility</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="320"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="325"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Replace textures with PNG files.&lt;/p&gt;&lt;p&gt;Textures are loaded from load/textures/[Title ID]/.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="323"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="328"/>
         <source>Use Custom Textures</source>
         <translation>Nutze benutzerdefinierte Texturen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="330"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="335"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Dump textures to PNG files.&lt;/p&gt;&lt;p&gt;Textures are dumped to dump/textures/[Title ID]/.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="333"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="338"/>
         <source>Dump Textures</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="340"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="345"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load all custom textures into memory on boot, instead of loading them when the game requires them.&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="343"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="348"/>
         <source>Preload Custom Textures</source>
         <translation>Benutzerdefinierte Texturen im Voraus laden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="350"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="355"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Load custom textures asynchronously with background threads to reduce loading stutter&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="353"/>
+        <location filename="../../src/lime_qt/configuration/configure_enhancements.ui" line="358"/>
         <source>Async Custom Texture Loading</source>
         <translation>Benutzerdefinierte Texturen asynchron laden</translation>
     </message>
@@ -1372,12 +1268,12 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_general.cpp" line="149"/>
-        <source>Citra</source>
+        <source>Lime3DS</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_general.cpp" line="150"/>
-        <source>Are you sure you want to &lt;b&gt;reset your settings&lt;/b&gt; and close Citra?</source>
+        <source>Are you sure you want to &lt;b&gt;reset your settings&lt;/b&gt; and close Lime3DS?</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -1632,281 +1528,316 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_input.ui" line="77"/>
-        <source>Face Buttons</source>
-        <translation>Tasten</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="91"/>
-        <source>Y:</source>
-        <translation>Y:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="109"/>
-        <source>X:</source>
-        <translation>X:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="127"/>
-        <source>B:</source>
-        <translation>B:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="145"/>
-        <source>A:</source>
-        <translation>A:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="164"/>
-        <source>Directional Pad</source>
-        <translation>Steuerkreuz</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="178"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="406"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="564"/>
-        <source>Up:</source>
-        <translation>Hoch:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="196"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="467"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="589"/>
-        <source>Down:</source>
-        <translation>Runter:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="214"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="442"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="546"/>
-        <source>Left:</source>
-        <translation>Links:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="232"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="424"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="528"/>
-        <source>Right:</source>
-        <translation>Rechts:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="251"/>
-        <source>Misc.</source>
-        <translation>Sonstiges</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="265"/>
-        <source>Start:</source>
-        <translation>Start:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="283"/>
-        <source>Select:</source>
-        <translation>Select:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="301"/>
-        <source>Home:</source>
-        <translation>Home:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="319"/>
-        <source>Power:</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="337"/>
-        <source>Circle Mod:</source>
-        <translation>Schiebepad Modus:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="355"/>
-        <source>GPIO14:</source>
-        <translation>GPIO14:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="373"/>
-        <source>Debug:</source>
-        <translation>Debug:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="392"/>
-        <source>Circle Pad</source>
-        <translation>Schiebepad</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="458"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="580"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="503"/>
-        <source>Set Analog Stick</source>
-        <translation>Analog-Stick festlegen</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="490"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="612"/>
-        <source>Deadzone: 0</source>
-        <translation>Deadzone: 0</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="514"/>
-        <source>C-Stick</source>
-        <translation>C-Stick</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="636"/>
         <source>Shoulder Buttons</source>
         <translation>Schulterknöpfe</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="650"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="91"/>
         <source>ZR:</source>
         <translation>ZR:</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="668"/>
-        <source>ZL:</source>
-        <translation>ZL:</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="686"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="109"/>
         <source>L:</source>
         <translation>L:</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="704"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="127"/>
+        <source>ZL:</source>
+        <translation>ZL:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="145"/>
         <source>R:</source>
         <translation>R:</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="754"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="164"/>
+        <source>Face Buttons</source>
+        <translation>Tasten</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="178"/>
+        <source>Y:</source>
+        <translation>Y:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="196"/>
+        <source>X:</source>
+        <translation>X:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="214"/>
+        <source>B:</source>
+        <translation>B:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="232"/>
+        <source>A:</source>
+        <translation>A:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="251"/>
+        <source>Directional Pad</source>
+        <translation>Steuerkreuz</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="265"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="557"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="760"/>
+        <source>Up:</source>
+        <translation>Hoch:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="283"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="539"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="724"/>
+        <source>Down:</source>
+        <translation>Runter:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="301"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="521"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="778"/>
+        <source>Left:</source>
+        <translation>Links:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="319"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="610"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="742"/>
+        <source>Right:</source>
+        <translation>Rechts:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="338"/>
+        <source>Misc.</source>
+        <translation>Sonstiges</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="352"/>
+        <source>Start:</source>
+        <translation>Start:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="370"/>
+        <source>Select:</source>
+        <translation>Select:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="388"/>
+        <source>Home:</source>
+        <translation>Home:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="406"/>
+        <source>Power:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="424"/>
+        <source>Circle Mod:</source>
+        <translation>Schiebepad Modus:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="442"/>
+        <source>GPIO14:</source>
+        <translation>GPIO14:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="460"/>
+        <source>Debug:</source>
+        <translation>Debug:</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="479"/>
+        <source>Circle Pad</source>
+        <translation>Schiebepad</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="500"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="850"/>
+        <source>Up Left:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="580"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="894"/>
+        <source>Deadzone: 0</source>
+        <translation>Deadzone: 0</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="599"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="913"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="526"/>
+        <source>Set Analog Stick</source>
+        <translation>Analog-Stick festlegen</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="628"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="796"/>
+        <source>Up Right:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="645"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="868"/>
+        <source>Diagonals</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="666"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="832"/>
+        <source>Down Right:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="684"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="814"/>
+        <source>Down Left:</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="710"/>
+        <source>C-Stick</source>
+        <translation>C-Stick</translation>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="963"/>
         <source>Motion / Touch...</source>
         <translation>Bewegungssteuerung / Toucheingaben...</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="782"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="991"/>
         <source>Auto Map</source>
         <translation>Automatisch belegen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="810"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="1019"/>
         <source>Clear All</source>
         <translation>Alle zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="838"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="1047"/>
         <source>Restore Defaults</source>
         <translation>Standardwerte wiederherstellen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="223"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="262"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="335"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.ui" line="1056"/>
+        <source>Use Artic Controller when connected to Artic Base Server</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="240"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="280"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="353"/>
         <source>Clear</source>
         <translation>Zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="225"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="264"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="340"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="242"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="282"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="358"/>
         <source>[not set]</source>
         <translation>[Nicht konfiguriert]</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="229"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="268"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="345"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="246"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="286"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="363"/>
         <source>Restore Default</source>
         <translation>Standard wiederherstellen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="284"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="560"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="302"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="583"/>
         <source>Information</source>
         <translation>Informationen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="285"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="303"/>
         <source>After pressing OK, first move your joystick horizontally, and then vertically.</source>
         <translation>Drücken Sie OK und bewegen Sie den Joystick zuerst horizontal, dann vertikal.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="305"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="517"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="323"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="540"/>
         <source>Deadzone: %1%</source>
         <translation>Deadzone: %1%</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="309"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="524"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="327"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="547"/>
         <source>Modifier Scale: %1%</source>
         <translation>Modifikator-Maßstab: %1%</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="554"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="577"/>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="555"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="578"/>
         <source>Auto mapping failed. Your controller may not have a corresponding mapping</source>
         <translation>Automatische Belegung fehlgeschlagen. Dein Controller könnte keine übereinstimmende Belegung haben</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="561"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="584"/>
         <source>After pressing OK, press any button on your joystick</source>
         <translation>Nachdem sie OK gedrückt haben, drücken sie eine beliebige Taste auf ihrem Joystick</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="583"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="606"/>
         <source>[press key]</source>
         <translation>[Taste drücken]</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="630"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="653"/>
         <source>Error!</source>
         <translation>Fehler!</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="631"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="654"/>
         <source>You&apos;re using a key that&apos;s already bound.</source>
         <translation>Sie benutzen eine Taste, die schon zugewiesen wurde.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="652"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="675"/>
         <source>New Profile</source>
         <translation>Neues Profil</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="652"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="675"/>
         <source>Enter the name for the new profile.</source>
         <translation>Geben Sie den Namen für das neue Profil ein.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="672"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="695"/>
         <source>Delete Profile</source>
         <translation>Profil löschen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="672"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="695"/>
         <source>Delete profile %1?</source>
         <translation>Profil %1 löschen?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="685"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="708"/>
         <source>Rename Profile</source>
         <translation>Profil umbenennen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="685"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="708"/>
         <source>New name:</source>
         <translation>Neuer Name:</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="704"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="727"/>
         <source>Duplicate profile name</source>
         <translation>Profilname duplizieren</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="705"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="728"/>
         <source>Profile name already exists. Please choose a different name.</source>
         <translation>Der Profilname existiert bereits. Bitte nutzen sie einen anderen Namen.</translation>
     </message>
@@ -1960,7 +1891,7 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="88"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="195"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="264"/>
         <source>Custom Layout</source>
         <translation type="unfinished"/>
     </message>
@@ -1981,91 +1912,136 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="166"/>
-        <source>Background Color</source>
+        <source>Small Screen Position</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="203"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="430"/>
-        <source>Top Screen</source>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="174"/>
+        <source>Upper Right</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="179"/>
+        <source>Middle Right</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="184"/>
+        <source>Bottom Right (default)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="189"/>
+        <source>Upper Left</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="194"/>
+        <source>Middle Left</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="199"/>
+        <source>Bottom Left</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="204"/>
+        <source>Above large screen</source>
         <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="209"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="304"/>
+        <source>Below large screen</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="235"/>
+        <source>Background Color</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="272"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="499"/>
+        <source>Top Screen</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="278"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="373"/>
         <source>X Position</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="219"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="239"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="259"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="279"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="314"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="334"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="354"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="374"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="446"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="473"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="522"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="535"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="288"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="308"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="328"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="348"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="383"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="403"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="423"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="443"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="515"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="542"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="591"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="604"/>
         <source>px</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="229"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="324"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="298"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="393"/>
         <source>Y Position</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="249"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="344"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="318"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="413"/>
         <source>Width</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="269"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="364"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="338"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="433"/>
         <source>Height</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="298"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="499"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="367"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="568"/>
         <source>Bottom Screen</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="391"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="460"/>
         <source>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Bottom Screen Opacity % (OpenGL Only)&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="422"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="491"/>
         <source>Single Screen Layout</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="436"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="545"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="505"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="614"/>
         <source>Stretch</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="456"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="505"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="525"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="574"/>
         <source>Left/Right Padding</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="463"/>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="512"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="532"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="581"/>
         <source>Top/Bottom Padding</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="566"/>
+        <location filename="../../src/lime_qt/configuration/configure_layout.ui" line="635"/>
         <source>Note: These settings affect the Single Screen and Separate Windows layouts</source>
         <translation type="unfinished"/>
     </message>
@@ -2210,8 +2186,8 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_motion_touch.cpp" line="102"/>
-        <source>&lt;a href=&apos;https://citra-emu.org/wiki/using-a-controller-or-android-phone-for-motion-or-touch-input&apos;&gt;&lt;span style=&quot;text-decoration: underline; color:#039be5;&quot;&gt;Learn More&lt;/span&gt;&lt;/a&gt;</source>
-        <translation>&lt;a href=&apos;https://citra-emu.org/wiki/using-a-controller-or-android-phone-for-motion-or-touch-input&apos;&gt;&lt;span style=&quot;text-decoration: underline; color:#039be5;&quot;&gt;Mehr erfahren&lt;/span&gt;&lt;/a&gt;</translation>
+        <source>&lt;a https://web.archive.org/web/20240301211230/https://citra-emu.org/wiki/using-a-controller-or-android-phone-for-motion-or-touch-input&apos;&gt;&lt;span style=&quot;text-decoration: underline; color:#039be5;&quot;&gt;Learn More&lt;/span&gt;&lt;/a&gt;</source>
+        <translation type="unfinished"/>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_motion_touch.cpp" line="209"/>
@@ -2260,7 +2236,7 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_motion_touch.cpp" line="343"/>
-        <source>Citra</source>
+        <source>Lime3DS</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -2363,11 +2339,11 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_per_game.cpp" line="84"/>
-        <source>Citra</source>
+        <source>Lime3DS</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_per_game.cpp" line="84"/>
+        <location filename="../../src/lime_qt/configuration/configure_per_game.cpp" line="85"/>
         <source>Are you sure you want to &lt;b&gt;reset your settings for this game&lt;/b&gt;?</source>
         <translation>Sind sie sicher, dass sie ihre &lt;b&gt;Einstellungen für dieses Spiel zurücksetzen&lt;/b&gt; möchten?</translation>
     </message>
@@ -2782,723 +2758,780 @@ Möchten Sie den Fehler ignorieren und fortfahren?</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/configuration/configure_system.ui" line="512"/>
+        <source>Real Console Unique Data</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.ui" line="518"/>
+        <source>SecureInfo_A/B</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.ui" line="544"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.ui" line="580"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.ui" line="616"/>
+        <source>Choose</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.ui" line="554"/>
+        <source>LocalFriendCodeSeed_A/B</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.ui" line="590"/>
+        <source>CTCert</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.ui" line="629"/>
         <source>System settings are available only when game is not running.</source>
         <translation>Systemeinstellungen sind nur verfügbar, wenn kein Spiel läuft. </translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="38"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="40"/>
         <source>Japan</source>
         <translation>Japan</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="45"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="47"/>
         <source>Anguilla</source>
         <translation>Anguilla</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="46"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="48"/>
         <source>Antigua and Barbuda</source>
         <translation>Antigua und Barbuda</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="47"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="49"/>
         <source>Argentina</source>
         <translation>Argentinien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="48"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="50"/>
         <source>Aruba</source>
         <translation>Aruba</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="49"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="51"/>
         <source>Bahamas</source>
         <translation>Bahamas</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="50"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="52"/>
         <source>Barbados</source>
         <translation>Barbados</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="51"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="53"/>
         <source>Belize</source>
         <translation>Belize</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="52"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="54"/>
         <source>Bolivia</source>
         <translation>Bolivien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="53"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="55"/>
         <source>Brazil</source>
         <translation>Brasilien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="54"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="56"/>
         <source>British Virgin Islands</source>
         <translation>Britische Jungferninseln</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="55"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="57"/>
         <source>Canada</source>
         <translation>Kanada</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="56"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="58"/>
         <source>Cayman Islands</source>
         <translation>Cayman Inseln</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="57"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="59"/>
         <source>Chile</source>
         <translation>Chile</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="58"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="60"/>
         <source>Colombia</source>
         <translation>Kolumbien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="59"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="61"/>
         <source>Costa Rica</source>
         <translation>Costa Rica</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="60"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="62"/>
         <source>Dominica</source>
         <translation>Dominica</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="61"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="63"/>
         <source>Dominican Republic</source>
         <translation>Dominikanische Republik</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="62"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="64"/>
         <source>Ecuador</source>
         <translation>Ecuador</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="63"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="65"/>
         <source>El Salvador</source>
         <translation>El Salvador</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="64"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="66"/>
         <source>French Guiana</source>
         <translation>Französisch-Guayana</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="65"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="67"/>
         <source>Grenada</source>
         <translation>Grenada</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="66"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="68"/>
         <source>Guadeloupe</source>
         <translation>Guadeloupe</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="67"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="69"/>
         <source>Guatemala</source>
         <translation>Guatemala</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="68"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="70"/>
         <source>Guyana</source>
         <translation>Guyana</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="69"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="71"/>
         <source>Haiti</source>
         <translation>Haiti</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="70"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="72"/>
         <source>Honduras</source>
         <translation>Honduras</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="71"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="73"/>
         <source>Jamaica</source>
         <translation>Jamaika</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="72"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="74"/>
         <source>Martinique</source>
         <translation>Martinique</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="73"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="75"/>
         <source>Mexico</source>
         <translation>Mexiko</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="74"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="76"/>
         <source>Montserrat</source>
         <translation>Montserrat</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="75"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="77"/>
         <source>Netherlands Antilles</source>
         <translation>Niederländische Antillen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="76"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="78"/>
         <source>Nicaragua</source>
         <translation>Nicaragua</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="77"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="79"/>
         <source>Panama</source>
         <translation>Panama</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="78"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="80"/>
         <source>Paraguay</source>
         <translation>Paraguay</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="79"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="81"/>
         <source>Peru</source>
         <translation>Peru</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="80"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="82"/>
         <source>Saint Kitts and Nevis</source>
         <translation>St. Kitts und Nevis</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="81"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="83"/>
         <source>Saint Lucia</source>
         <translation>St. Lucia</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="82"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="84"/>
         <source>Saint Vincent and the Grenadines</source>
         <translation>St. Vincent und die Grenadinen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="83"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="85"/>
         <source>Suriname</source>
         <translation>Suriname</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="84"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="86"/>
         <source>Trinidad and Tobago</source>
         <translation>Trinidad und Tobago</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="85"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="87"/>
         <source>Turks and Caicos Islands</source>
         <translation>Turks- und Caicosinseln</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="86"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="88"/>
         <source>United States</source>
         <translation>Vereinigte Staaten von Amerika</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="87"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="89"/>
         <source>Uruguay</source>
         <translation>Uruguay</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="88"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="90"/>
         <source>US Virgin Islands</source>
         <translation>Amerikanische Jungferninseln</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="89"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="91"/>
         <source>Venezuela</source>
         <translation>Venezuela</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="101"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="103"/>
         <source>Albania</source>
         <translation>Albanien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="102"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="104"/>
         <source>Australia</source>
         <translation>Australien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="103"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="105"/>
         <source>Austria</source>
         <translation>Österreich</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="104"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="106"/>
         <source>Belgium</source>
         <translation>Belgien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="105"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="107"/>
         <source>Bosnia and Herzegovina</source>
         <translation>Bosnien und Herzegowina</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="106"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="108"/>
         <source>Botswana</source>
         <translation>Botswana</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="107"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="109"/>
         <source>Bulgaria</source>
         <translation>Bulgarien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="108"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="110"/>
         <source>Croatia</source>
         <translation>Kroatien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="109"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="111"/>
         <source>Cyprus</source>
         <translation>Zypern</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="110"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="112"/>
         <source>Czech Republic</source>
         <translation>Tschechische Republik</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="111"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="113"/>
         <source>Denmark</source>
         <translation>Dänemark</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="112"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="114"/>
         <source>Estonia</source>
         <translation>Estland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="113"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="115"/>
         <source>Finland</source>
         <translation>Finnland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="114"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="116"/>
         <source>France</source>
         <translation>Frankreich</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="115"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="117"/>
         <source>Germany</source>
         <translation>Deutschland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="116"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="118"/>
         <source>Greece</source>
         <translation>Griechenland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="117"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="119"/>
         <source>Hungary</source>
         <translation>Ungarn</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="118"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="120"/>
         <source>Iceland</source>
         <translation>Island</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="119"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="121"/>
         <source>Ireland</source>
         <translation>Irland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="120"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="122"/>
         <source>Italy</source>
         <translation>Italien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="121"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="123"/>
         <source>Latvia</source>
         <translation>Lettland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="122"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="124"/>
         <source>Lesotho</source>
         <translation>Lesotho</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="123"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="125"/>
         <source>Liechtenstein</source>
         <translation>Liechtenstein</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="124"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="126"/>
         <source>Lithuania</source>
         <translation>Litauen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="125"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="127"/>
         <source>Luxembourg</source>
         <translation>Luxemburg</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="126"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="128"/>
         <source>Macedonia</source>
         <translation>Mazedonien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="127"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="129"/>
         <source>Malta</source>
         <translation>Malta</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="128"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="130"/>
         <source>Montenegro</source>
         <translation>Montenegro</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="129"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="131"/>
         <source>Mozambique</source>
         <translation>Mosambik</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="130"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="132"/>
         <source>Namibia</source>
         <translation>Namibia</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="131"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="133"/>
         <source>Netherlands</source>
         <translation>Niederlande</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="132"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="134"/>
         <source>New Zealand</source>
         <translation>Neuseeland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="133"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="135"/>
         <source>Norway</source>
         <translation>Norwegen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="134"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="136"/>
         <source>Poland</source>
         <translation>Polen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="135"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="137"/>
         <source>Portugal</source>
         <translation>Portugal</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="136"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="138"/>
         <source>Romania</source>
         <translation>Rumänien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="137"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="139"/>
         <source>Russia</source>
         <translation>Russland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="138"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="140"/>
         <source>Serbia</source>
         <translation>Serbien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="139"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="141"/>
         <source>Slovakia</source>
         <translation>Slowakei</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="140"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="142"/>
         <source>Slovenia</source>
         <translation>Slowenien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="141"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="143"/>
         <source>South Africa</source>
         <translation>Südafrika</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="142"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="144"/>
         <source>Spain</source>
         <translation>Spanien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="143"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="145"/>
         <source>Swaziland</source>
         <translation>Swasiland</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="144"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="146"/>
         <source>Sweden</source>
         <translation>Schweden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="145"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="147"/>
         <source>Switzerland</source>
         <translation>Schweiz</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="146"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="148"/>
         <source>Turkey</source>
         <translation>Türkei</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="147"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="149"/>
         <source>United Kingdom</source>
         <translation>Vereinigtes Königreich</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="148"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="150"/>
         <source>Zambia</source>
         <translation>Sambia</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="149"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="151"/>
         <source>Zimbabwe</source>
         <translation>Simbabwe</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="150"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="152"/>
         <source>Azerbaijan</source>
         <translation>Aserbaidschan</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="151"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="153"/>
         <source>Mauritania</source>
         <translation>Mauretanien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="152"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="154"/>
         <source>Mali</source>
         <translation>Mali</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="153"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="155"/>
         <source>Niger</source>
         <translation>Niger</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="154"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="156"/>
         <source>Chad</source>
         <translation>Tschad</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="155"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="157"/>
         <source>Sudan</source>
         <translation>Sudan</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="156"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="158"/>
         <source>Eritrea</source>
         <translation>Eritrea</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="157"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="159"/>
         <source>Djibouti</source>
         <translation>Dschibuti</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="158"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="160"/>
         <source>Somalia</source>
         <translation>Somalia</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="159"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="161"/>
         <source>Andorra</source>
         <translation>Andorra</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="160"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="162"/>
         <source>Gibraltar</source>
         <translation>Gibraltar</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="161"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="163"/>
         <source>Guernsey</source>
         <translation>Guernsey</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="162"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="164"/>
         <source>Isle of Man</source>
         <translation>Isle of Man</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="163"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="165"/>
         <source>Jersey</source>
         <translation>Jersey</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="164"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="166"/>
         <source>Monaco</source>
         <translation>Monaco</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="165"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="167"/>
         <source>Taiwan</source>
         <translation>Taiwan</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="173"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="175"/>
         <source>South Korea</source>
         <translation>Südkorea</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="181"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="183"/>
         <source>Hong Kong</source>
         <translation>Hongkong</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="182"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="184"/>
         <source>Macau</source>
         <translation>Macau</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="189"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="191"/>
         <source>Indonesia</source>
         <translation>Indonesien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="190"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="192"/>
         <source>Singapore</source>
         <translation>Singapur</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="191"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="193"/>
         <source>Thailand</source>
         <translation>Thailand</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="192"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="194"/>
         <source>Philippines</source>
         <translation>Philippinen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="193"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="195"/>
         <source>Malaysia</source>
         <translation>Malaysia</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="197"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="199"/>
         <source>China</source>
         <translation>China</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="205"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="207"/>
         <source>United Arab Emirates</source>
         <translation>Vereinigte Arabische Emirate</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="206"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="208"/>
         <source>India</source>
         <translation>Indien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="207"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="209"/>
         <source>Egypt</source>
         <translation>Ägypten</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="208"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="210"/>
         <source>Oman</source>
         <translation>Oman</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="209"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="211"/>
         <source>Qatar</source>
         <translation>Katar</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="210"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="212"/>
         <source>Kuwait</source>
         <translation>Kuwait</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="211"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="213"/>
         <source>Saudi Arabia</source>
         <translation>Saudi-Arabien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="212"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="214"/>
         <source>Syria</source>
         <translation>Syrien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="213"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="215"/>
         <source>Bahrain</source>
         <translation>Bahrain</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="214"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="216"/>
         <source>Jordan</source>
         <translation>Jordanien</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="221"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="223"/>
         <source>San Marino</source>
         <translation>San Marino</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="222"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="224"/>
         <source>Vatican City</source>
         <translation>Vatikanstadt</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="223"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="225"/>
         <source>Bermuda</source>
         <translation>Bermudas</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="264"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="245"/>
+        <source>Select SecureInfo_A/B</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="246"/>
+        <source>SecureInfo_A/B (SecureInfo_A SecureInfo_B);;All Files (*.*)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="253"/>
+        <source>Select LocalFriendCodeSeed_A/B</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="254"/>
+        <source>LocalFriendCodeSeed_A/B (LocalFriendCodeSeed_A LocalFriendCodeSeed_B);;All Files (*.*)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="262"/>
+        <source>Select CTCert</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="262"/>
+        <source>CTCert.bin (*.bin);;All Files (*.*)</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="292"/>
         <source>Download System Files from Nintendo servers</source>
         <translation>Lade System-Dateien von Nintendo-Servern herunter</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="272"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="300"/>
         <source>Lime3DS is missing keys to download system files. &lt;br&gt;&lt;a href=&apos;https://web.archive.org/web/20240304203412/https://citra-emu.org/wiki/aes-keys/&apos;&gt;&lt;span style=&quot;text-decoration: underline; color:#039be5;&quot;&gt;How to get keys?&lt;/span&gt;&lt;/a&gt;</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="350"/>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="523"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="379"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="555"/>
         <source>Console ID: 0x%1</source>
         <translation>Konsolen-ID: 0x%1</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="509"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="541"/>
         <source>This will replace your current virtual 3DS with a new one. Your current virtual 3DS will not be recoverable. This might have unexpected effects in games. This might fail, if you use an outdated config savegame. Continue?</source>
         <translation>Dies ersetzt Ihren aktuellen virtuellen 3DS mit einem neuen. Der aktuelle virtuelle 3DS kann nicht wiederhergestellt werden. Es könnten unerwartete Effekte in Spielen auftreten. Sollten Sie veraltete Konfigurationen verwenden, könnte dies scheitern. Fortfahren?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="513"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="545"/>
         <source>Warning</source>
         <translation>Warnung</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="590"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="675"/>
         <source>Downloading files...</source>
         <translation>Dateien werden heruntergeladen…</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="590"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="675"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="615"/>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="617"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="700"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="702"/>
         <source>Lime3DS</source>
         <translation>Lime3DS</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="615"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="700"/>
         <source>Downloading system files failed.</source>
         <translation>Herunterladen der System-Dateien fehlgeschlagen.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="617"/>
+        <location filename="../../src/lime_qt/configuration/configure_system.cpp" line="702"/>
         <source>Successfully downloaded system files.</source>
         <translation>System-Dateien erfolgreich heruntergeladen.</translation>
     </message>
@@ -3856,7 +3889,7 @@ Ziehe Punkte, um ihre Position zu verändern, oder doppelklicke auf Zellen in de
     <message>
         <location filename="../../src/lime_qt/dumping/dumping_dialog.cpp" line="25"/>
         <location filename="../../src/lime_qt/dumping/dumping_dialog.cpp" line="85"/>
-        <source>Citra</source>
+        <source>Lime3DS</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -3902,82 +3935,82 @@ Please check your FFmpeg installation used for compilation.</source>
 <context>
     <name>GMainWindow</name>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="274"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="421"/>
         <source>No Suitable Vulkan Devices Detected</source>
         <translation>Keine geeigneten Vulkan-Geräte gefunden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="275"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="422"/>
         <source>Vulkan initialization failed during boot.&lt;br/&gt;Your GPU may not support Vulkan 1.1, or you do not have the latest graphics driver.</source>
         <translation>Vulkan-Initialisierung beim Starten fehlgeschlagen.&lt;br/&gt;Ihre Grafikkarte unterstützt möglicherweise &quot;Vulkan 1.1&quot; nicht, oder sie haben nicht den neuesten Grafik-Treiber.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="402"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="507"/>
         <source>Current Artic Base traffic speed. Higher values indicate bigger transfer loads.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="405"/>
-        <location filename="../../src/lime_qt/main.cpp" line="3559"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="510"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3720"/>
         <source>Current emulation speed. Values higher or lower than 100% indicate emulation is running faster or slower than a 3DS.</source>
         <translation>Derzeitige Emulationsgeschwindigkeit. Werte höher oder niedriger als 100% zeigen, dass die Emulation schneller oder langsamer läuft als auf einem 3DS.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="408"/>
-        <location filename="../../src/lime_qt/main.cpp" line="3561"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="513"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3722"/>
         <source>How many frames per second the game is currently displaying. This will vary from game to game and scene to scene.</source>
         <translation>Die Anzahl der Bilder pro Sekunde die das Spiel gerade darstellt. Dies wird von Spiel zu Spiel und von Szene zu Szene variieren.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="412"/>
-        <location filename="../../src/lime_qt/main.cpp" line="3564"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="517"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3725"/>
         <source>Time taken to emulate a 3DS frame, not counting framelimiting or v-sync. For full-speed emulation this should be at most 16.67 ms.</source>
         <translation>Die benötigte Zeit um ein 3DS-Einzelbild zu emulieren (V-Sync oder Bildratenbegrenzung nicht mitgezählt). Bei Echtzeitemulation sollte dieser Wert 16,67ms betragen.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="570"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="685"/>
         <source>Clear Recent Files</source>
         <translation>Zuletzt verwendete Dateien zurücksetzen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1003"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1112"/>
         <source>&amp;Continue</source>
         <translation>&amp;Fortsetzen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1005"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1114"/>
         <source>&amp;Pause</source>
         <translation>&amp;Pause</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1079"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1188"/>
         <source>Update Available</source>
         <translation>Update verfügbar</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1080"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1189"/>
         <source>An update is available. Would you like to install it now?</source>
         <translation>Ein Update ist verfügbar. Möchten Sie es jetzt installieren?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1090"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1199"/>
         <source>No Update Found</source>
         <translation>Kein Update gefunden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1090"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1199"/>
         <source>No update is found.</source>
         <translation>Kein Update gefunden.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1111"/>
-        <location filename="../../src/lime_qt/main.cpp" line="1119"/>
-        <location filename="../../src/lime_qt/main.cpp" line="1146"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1220"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1228"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1255"/>
         <source>Migration</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1112"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1221"/>
         <source>Lime3DS has moved to a new data directory.
 
 Would you like to migrate your Citra data to this new location?
@@ -3985,13 +4018,13 @@ Would you like to migrate your Citra data to this new location?
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1120"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1229"/>
         <source>You can manually re-trigger this prompt by deleting the new user data directory:
 %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1147"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1256"/>
         <source>Data was migrated successfully. Lime3DS will now start.
 
 If you wish to clean up the files which were left in the old data location, you can do so by deleting the following directory:
@@ -3999,333 +4032,323 @@ If you wish to clean up the files which were left in the old data location, you 
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1172"/>
-        <source>Citra is running a game</source>
-        <extracomment>TRANSLATORS: This string is shown to the user to explain why Citra needs to prevent the computer from sleeping</extracomment>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1281"/>
+        <source>Lime3DS is running a game</source>
+        <extracomment>TRANSLATORS: This string is shown to the user to explain why Lime3DS needs to prevent the computer from sleeping</extracomment>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1244"/>
-        <location filename="../../src/lime_qt/main.cpp" line="1287"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1353"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1396"/>
         <source>Invalid ROM Format</source>
         <translation>Ungültiges ROM-Format</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1245"/>
-        <location filename="../../src/lime_qt/main.cpp" line="1288"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1354"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1397"/>
         <source>Your ROM format is not supported.&lt;br/&gt;Please follow the guides to redump your &lt;a href=&apos;https://web.archive.org/web/20240304210021/https://citra-emu.org/wiki/dumping-game-cartridges/&apos;&gt;game cartridges&lt;/a&gt; or &lt;a href=&apos;https://web.archive.org/web/20240304210011/https://citra-emu.org/wiki/dumping-installed-titles/&apos;&gt;installed titles&lt;/a&gt;.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1259"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1368"/>
         <source>ROM Corrupted</source>
         <translation>ROM beschädigt</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1260"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1369"/>
         <source>Your ROM is corrupted. &lt;br/&gt;Please follow the guides to redump your &lt;a href=&apos;https://web.archive.org/web/20240304210021/https://citra-emu.org/wiki/dumping-game-cartridges/&apos;&gt;game cartridges&lt;/a&gt; or &lt;a href=&apos;https://web.archive.org/web/20240304210011/https://citra-emu.org/wiki/dumping-installed-titles/&apos;&gt;installed titles&lt;/a&gt;.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1273"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1382"/>
         <source>ROM Encrypted</source>
         <translation>ROM verschlüsselt</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1274"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1383"/>
         <source>Your ROM is encrypted. &lt;br/&gt;Please follow the guides to redump your &lt;a href=&apos;https://web.archive.org/web/20240304210021/https://citra-emu.org/wiki/dumping-game-cartridges/&apos;&gt;game cartridges&lt;/a&gt; or &lt;a href=&apos;https://web.archive.org/web/20240304210011/https://citra-emu.org/wiki/dumping-installed-titles/&apos;&gt;installed titles&lt;/a&gt;.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1300"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1409"/>
         <source>Unsupported ROM</source>
         <translation>Nicht-unterstützes ROM</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1301"/>
-        <source>GBA Virtual Console ROMs are not supported by Citra.</source>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1410"/>
+        <source>GBA Virtual Console ROMs are not supported by Lime3DS.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1306"/>
-        <location filename="../../src/lime_qt/main.cpp" line="3225"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1415"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3360"/>
         <source>Artic Base Server</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1314"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1423"/>
         <source>Error while loading ROM!</source>
         <translation>Fehler beim Laden des ROMs!</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1315"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1424"/>
         <source>An unknown error occurred. Please see the log for more details.</source>
         <translation>Ein unbekannter Fehler ist aufgetreten. Mehr Details im log</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1347"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1456"/>
         <source>CIA must be installed before usage</source>
         <translation>CIA muss vor der Benutzung installiert sein</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1348"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1457"/>
         <source>Before using this CIA, you must install it. Do you want to install it now?</source>
         <translation>Vor dem Nutzen dieser CIA, muss sie installiert werden. Möchten sie diese jetzt installieren?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1643"/>
-        <location filename="../../src/lime_qt/main.cpp" line="1644"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1747"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1748"/>
         <source>Slot %1</source>
         <translation>Speicherplatz %1</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1651"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1755"/>
         <source>Slot %1 - %2 %3</source>
         <translation>Speicherplatz %1 - %2 %3</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1758"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1862"/>
         <source>Error Opening %1 Folder</source>
         <translation>Fehler beim Öffnen des Ordners %1</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1759"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2082"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1863"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2194"/>
         <source>Folder does not exist!</source>
         <translation>Ordner existiert nicht!</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1769"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1873"/>
         <source>Remove Play Time Data</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1769"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1873"/>
         <source>Reset play time?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1889"/>
-        <location filename="../../src/lime_qt/main.cpp" line="1893"/>
-        <location filename="../../src/lime_qt/main.cpp" line="1899"/>
-        <location filename="../../src/lime_qt/main.cpp" line="1906"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1995"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1999"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2005"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2012"/>
         <source>Create Shortcut</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1890"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="1996"/>
         <source>Do you want to launch the game in fullscreen?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1894"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2000"/>
         <source>Successfully created a shortcut to %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1900"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2006"/>
         <source>This will create a shortcut to the current AppImage. This may not work well if you update. Continue?</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1907"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2013"/>
         <source>Failed to create a shortcut to %1</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1925"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2031"/>
         <source>Create Icon</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="1926"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2032"/>
         <source>Cannot create icon file. Path &quot;%1&quot; does not exist and cannot be created.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2029"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2141"/>
         <source>Dumping...</source>
         <translation>Dumpt...</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2029"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2239"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2141"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2351"/>
         <source>Cancel</source>
         <translation>Abbrechen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2050"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2274"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2277"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2870"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2894"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2896"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2926"/>
-        <location filename="../../src/lime_qt/main.cpp" line="3287"/>
-        <location filename="../../src/lime_qt/main.cpp" line="3380"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2162"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2386"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2389"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3004"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3028"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3030"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3060"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3423"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3516"/>
         <source>Lime3DS</source>
         <translation>Lime3DS</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2051"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2163"/>
         <source>Could not dump base RomFS.
 Refer to the log for details.</source>
         <translation>Konnte Base-RomFS nicht dumpen.
 Sehen sie sich das Log für Details an.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2082"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2194"/>
         <source>Error Opening %1</source>
         <translation>Fehler beim Öffnen von %1</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2089"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2201"/>
         <source>Select Directory</source>
         <translation>Ordner auswählen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2113"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2225"/>
         <source>Properties</source>
         <translation>Eigenschaften</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2114"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2226"/>
         <source>The game properties could not be loaded.</source>
         <translation>Die Spiel-Eigenschaften konnten nicht geladen werden.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2124"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2236"/>
         <source>3DS Executable (%1);;All Files (*.*)</source>
         <comment>%1 is an identifier for the 3DS executable file extensions.</comment>
         <translation>3DS Programmdatei (%1);;Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2128"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2240"/>
         <source>Load File</source>
         <translation>Datei laden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2140"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2252"/>
         <source>Load Files</source>
         <translation>Dateien laden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2141"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2253"/>
         <source>3DS Installation File (*.CIA*)</source>
         <translation>3DS Installationsdatei (*.CIA*)</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2141"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2253"/>
         <source>All Files (*.*)</source>
         <translation>Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2153"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2265"/>
         <source>Connect to Artic Base</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2154"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2266"/>
         <source>Enter Artic Base server address:</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2194"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2306"/>
         <source>%1 has been installed successfully.</source>
         <translation>%1 wurde erfolgreich installiert.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2197"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2309"/>
         <source>Unable to open File</source>
         <translation>Datei konnte nicht geöffnet werden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2198"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2310"/>
         <source>Could not open %1</source>
         <translation>Konnte %1 nicht öffnen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2202"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2314"/>
         <source>Installation aborted</source>
         <translation>Installation abgebrochen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2203"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2315"/>
         <source>The installation of %1 was aborted. Please see the log for more details</source>
         <translation>Die Installation von %1 wurde abgebrochen. Details finden Sie in der Logdatei.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2207"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2319"/>
         <source>Invalid File</source>
         <translation>Ungültige Datei</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2207"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2319"/>
         <source>%1 is not a valid CIA</source>
         <translation>%1 ist kein gültiges CIA</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2210"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2322"/>
         <source>Encrypted File</source>
         <translation>Verschlüsselte Datei</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2211"/>
-        <source>%1 must be decrypted before being used with Lime. A real 3DS is required.</source>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2323"/>
+        <source>%1 must be decrypted before being used with Lime3DS. A real 3DS is required.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2216"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2328"/>
         <source>Unable to find File</source>
         <translation>Unfähig die Datei zu finden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2217"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2329"/>
         <source>Could not find %1</source>
         <translation>Konnte %1 nicht finden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2239"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2351"/>
         <source>Uninstalling &apos;%1&apos;...</source>
         <translation>Deinstalliere &apos;%1&apos;…</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2275"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2387"/>
         <source>Failed to uninstall &apos;%1&apos;.</source>
         <translation>Deinstallieren von &apos;%1&apos; fehlgeschlagen.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2278"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2390"/>
         <source>Successfully uninstalled &apos;%1&apos;.</source>
         <translation>&apos;%1&apos; erfolgreich deinstalliert.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2291"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2403"/>
         <source>File not found</source>
         <translation>Datei nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2292"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2404"/>
         <source>File &quot;%1&quot; not found</source>
         <translation>Datei &quot;%1&quot; nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2378"/>
-        <source>Missing Citra Account</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2379"/>
-        <source>You must link your Citra account to submit test cases.&lt;br/&gt;Go to Emulation &amp;gt; Configure... &amp;gt; Web to do so.</source>
-        <translation type="unfinished"/>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2554"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2684"/>
         <source>Savestates</source>
         <translation>Speicherstände</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2555"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2685"/>
         <source>Warning: Savestates are NOT a replacement for in-game saves, and are not meant to be reliable.
 
 Use at your own risk!</source>
@@ -4334,76 +4357,76 @@ Use at your own risk!</source>
 Nutzung dieser Speicherstände ist dein eigenes Risiko!</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2631"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2637"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2662"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2761"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2767"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2792"/>
         <source>Error opening amiibo data file</source>
         <translation>Fehler beim Öffnen der Amiibo-Daten-Datei</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2632"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2762"/>
         <source>A tag is already in use.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2638"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2768"/>
         <source>Game is not looking for amiibos.</source>
         <translation>Spiel schaut nicht nach Amiibos.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2643"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2773"/>
         <source>Amiibo File (%1);; All Files (*.*)</source>
         <translation>Amiibo Datei (%1);; Alle Dateien (*.*)</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2644"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2774"/>
         <source>Load Amiibo</source>
         <translation>Amiibo laden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2663"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2793"/>
         <source>Unable to open amiibo file &quot;%1&quot; for reading.</source>
         <translation>Unfähig die Amiibo-Datei &quot;%1&quot; zum Lesen zu öffnen.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2737"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2867"/>
         <source>Record Movie</source>
         <translation>Aufnahme starten</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2737"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2867"/>
         <source>Movie recording cancelled.</source>
         <translation>Aufnahme abgebrochen.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2750"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2771"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2880"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2901"/>
         <source>Movie Saved</source>
         <translation>Aufnahme gespeichert</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2751"/>
-        <location filename="../../src/lime_qt/main.cpp" line="2771"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2881"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2901"/>
         <source>The movie is successfully saved.</source>
         <translation>Die Aufnahme wurde erfolgreich gespeichert.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2790"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2920"/>
         <source>Invalid Screenshot Directory</source>
         <translation>Ungültiges Bildschirmfoto-Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2791"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2921"/>
         <source>Cannot create specified screenshot directory. Screenshot path is set back to its default value.</source>
         <translation>Kann das angegebene Bildschirmfoto-Verzeichnis nicht erstellen. Der Bildschirmfoto-Pfad wurde auf die Voreinstellung zurückgesetzt.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2822"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2943"/>
         <source>Could not load video dumper</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2824"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2945"/>
         <source>FFmpeg could not be loaded. Make sure you have a compatible version installed.
 
 To install FFmpeg to Lime, press Open and select your FFmpeg directory.
@@ -4412,198 +4435,198 @@ To view a guide on how to install FFmpeg, press Help.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2849"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="2983"/>
         <source>Select FFmpeg Directory</source>
         <translation>Wähle FFmpeg-Verzeichnis</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2871"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3005"/>
         <source>The provided FFmpeg directory is missing %1. Please make sure the correct directory was selected.</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2894"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3028"/>
         <source>FFmpeg has been sucessfully installed.</source>
         <translation>FFmpeg wurde erfolgreich installiert.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2897"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3031"/>
         <source>Installation of FFmpeg failed. Check the log file for details.</source>
         <translation>Installation von FFmpeg fehlgeschlagen. Prüfe die Log-Datei für Details.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2927"/>
-        <source>Could not start video dumping.&lt;br&gt;Refer to the log for details.</source>
-        <translation>Konnte Video-Dumping nicht starten. &lt;br&gt;Sehen sie sich das Log für Details an.</translation>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3061"/>
+        <source>Could not start video dumping.&lt;br&gt;Please ensure that the video encoder is configured correctly.&lt;br&gt;Refer to the log for details.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2973"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3108"/>
         <source>Recording %1</source>
         <translation>Nehme %1 auf</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2977"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3112"/>
         <source>Playing %1 / %2</source>
         <translation>Spiele %1 / %2 ab</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2981"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3116"/>
         <source>Movie Finished</source>
         <translation>Film beendet</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="2999"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3134"/>
         <source>(Accessing SharedExtData)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3001"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3136"/>
         <source>(Accessing SystemSaveData)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3003"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3138"/>
         <source>(Accessing BossExtData)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3005"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3140"/>
         <source>(Accessing ExtData)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3007"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3142"/>
         <source>(Accessing SaveData)</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3010"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3145"/>
         <source>MB/s</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3010"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3145"/>
         <source>KB/s</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3035"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3170"/>
         <source>Artic Base Traffic: %1 %2%3</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3040"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3175"/>
         <source>Speed: %1%</source>
         <translation>Geschwindigkeit: %1%</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3042"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3177"/>
         <source>Speed: %1% / %2%</source>
         <translation>Geschwindigkeit: %1% / %2%</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3046"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3181"/>
         <source>Game: %1 FPS</source>
         <translation>Spiel: %1 FPS</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3047"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3182"/>
         <source>Frame: %1 ms</source>
         <translation>Einzelbild: %1 ms</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3134"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3269"/>
         <source>VOLUME: MUTE</source>
         <translation>LAUTSTÄRKE: STUMM</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3137"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3272"/>
         <source>VOLUME: %1%</source>
         <comment>Volume percentage (e.g. 50%)</comment>
         <translation>LAUTSTÄRKE: %1%</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3206"/>
-        <source>%1 is missing. Please &lt;a href=&apos;https://citra-emu.org/wiki/dumping-system-archives-and-the-shared-fonts-from-a-3ds-console/&apos;&gt;dump your system archives&lt;/a&gt;.&lt;br/&gt;Continuing emulation may result in crashes and bugs.</source>
-        <translation>%1 Fehlt. &lt;a href=&apos;https://citra-emu.org/wiki/dumping-system-archives-and-the-shared-fonts-from-a-3ds-console/&apos;&gt;Bitte dumpen Sie Ihre Systemarchive&lt;/a&gt;. &lt;br/&gt;Das Fortsetzen der Emulation könnte zu einem Absturz oder Bugs führen.</translation>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3341"/>
+        <source>%1 is missing. Please &lt;a https://web.archive.org/web/20240301100916/https://citra-emu.org/wiki/dumping-system-archives-and-the-shared-fonts-from-a-3ds-console/&apos;&gt;dump your system archives&lt;/a&gt;.&lt;br/&gt;Continuing emulation may result in crashes and bugs.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3214"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3349"/>
         <source>A system archive</source>
         <translation>Ein Systemarchiv</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3217"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3352"/>
         <source>System Archive Not Found</source>
         <translation>Systemarchiv nicht gefunden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3218"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3353"/>
         <source>System Archive Missing</source>
         <translation>Systemarchiv fehlt</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3221"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3356"/>
         <source>Save/load Error</source>
         <translation>Speichern/Laden Fehler</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3232"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3367"/>
         <source>Fatal Error</source>
         <translation>Fataler Fehler</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3234"/>
-        <source>A fatal error occurred. &lt;a href=&apos;https://community.citra-emu.org/t/how-to-upload-the-log-file/296&apos;&gt;Check the log&lt;/a&gt; for details.&lt;br/&gt;Continuing emulation may result in crashes and bugs.</source>
-        <translation>Ein fataler Fehler ist aufgetreten. &lt;a href=&apos;https://community.citra-emu.org/t/how-to-upload-the-log-file/296&apos;&gt; Überprüfe das log&lt;/a&gt;für Details. &lt;br/&gt; Das Fortfahren der Emulation könnte zu Abstürzen und Bugs führen.</translation>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3368"/>
+        <source>A fatal error occurred. &lt;a href=&apos;https://https://web.archive.org/web/20240105231121/https://community.citra-emu.org/t/how-to-upload-the-log-file/296&apos;&gt;Check the log&lt;/a&gt; for details.&lt;br/&gt;Continuing emulation may result in crashes and bugs.</source>
+        <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3238"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3374"/>
         <source>Fatal Error encountered</source>
         <translation>Auf fatalen Fehler gestoßen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3248"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3384"/>
         <source>Continue</source>
         <translation>Fortsetzen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3250"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3386"/>
         <source>Quit Game</source>
         <translation>Verlasse Spiel</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3264"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3400"/>
         <source>OK</source>
         <translation>Okay</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3287"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3423"/>
         <source>Would you like to exit now?</source>
         <translation>Möchten Sie die Anwendung jetzt verlassen?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3380"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3516"/>
         <source>The game is still running. Would you like to stop emulation?</source>
         <translation>Das Spiel läuft noch. Möchten Sie die Emulation stoppen?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3499"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3635"/>
         <source>Playback Completed</source>
         <translation>Wiedergabe abgeschlossen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3499"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3635"/>
         <source>Movie playback completed.</source>
         <translation>Wiedergabe der Aufnahme abgeschlossen.</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3510"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3646"/>
         <source>Primary Window</source>
         <translation>Primäres Fenster</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.cpp" line="3513"/>
+        <location filename="../../src/lime_qt/lime_qt.cpp" line="3649"/>
         <source>Secondary Window</source>
         <translation>Sekundäres Fenster</translation>
     </message>
@@ -4710,31 +4733,31 @@ To view a guide on how to install FFmpeg, press Help.</source>
     <name>GameList</name>
     <message>
         <location filename="../../src/lime_qt/game_list.cpp" line="529"/>
-        <location filename="../../src/lime_qt/game_list.cpp" line="937"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="938"/>
         <source>Compatibility</source>
         <translation>Kompatibilität</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/game_list.cpp" line="530"/>
-        <location filename="../../src/lime_qt/game_list.cpp" line="938"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="939"/>
         <source>Region</source>
         <translation>Region</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/game_list.cpp" line="531"/>
-        <location filename="../../src/lime_qt/game_list.cpp" line="939"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="940"/>
         <source>File type</source>
         <translation>Dateityp</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/game_list.cpp" line="532"/>
-        <location filename="../../src/lime_qt/game_list.cpp" line="940"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="941"/>
         <source>Size</source>
         <translation>Größe</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/game_list.cpp" line="533"/>
-        <location filename="../../src/lime_qt/game_list.cpp" line="941"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="942"/>
         <source>Play time</source>
         <translation type="unfinished"/>
     </message>
@@ -4863,7 +4886,7 @@ To view a guide on how to install FFmpeg, press Help.</source>
         <location filename="../../src/lime_qt/game_list.cpp" line="760"/>
         <location filename="../../src/lime_qt/game_list.cpp" line="770"/>
         <location filename="../../src/lime_qt/game_list.cpp" line="782"/>
-        <source>Citra</source>
+        <source>Lime3DS</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -4883,7 +4906,7 @@ Dies wird das Spiel löschen, sofern installiert, sowie jegliche installierten A
     </message>
     <message>
         <location filename="../../src/lime_qt/game_list.cpp" line="753"/>
-        <location filename="../../src/lime_qt/game_list.cpp" line="787"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="788"/>
         <source>%1 (DLC)</source>
         <translation>%1 (Zusatzinhalt)</translation>
     </message>
@@ -4898,42 +4921,42 @@ Dies wird das Spiel löschen, sofern installiert, sowie jegliche installierten A
         <translation>Sind sie sicher, dass sie die Aktualisierung für &apos;%1&apos; deinstallieren möchten?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="782"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="783"/>
         <source>Are you sure you want to uninstall all DLC for &apos;%1&apos;?</source>
         <translation>Sind sie sicher, dass sie die Zusatzinhalte für &apos;%1&apos; deinstallieren möchten?</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="806"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="807"/>
         <source>Scan Subfolders</source>
         <translation>Unterordner scannen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="807"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="808"/>
         <source>Remove Game Directory</source>
         <translation>Spieleverzeichnis entfernen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="826"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="827"/>
         <source>Move Up</source>
         <translation>Bewege hoch</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="828"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="829"/>
         <source>Move Down</source>
         <translation>Bewege runter</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="829"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="830"/>
         <source>Open Directory Location</source>
         <translation>Verzeichnispfad öffnen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="872"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="873"/>
         <source>Clear</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="936"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="937"/>
         <source>Name</source>
         <translation>Name</translation>
     </message>
@@ -5021,7 +5044,7 @@ Screen.</source>
 <context>
     <name>GameListPlaceholder</name>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="1096"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="1097"/>
         <source>Double-click to add a new folder to the game list</source>
         <translation>Doppel-Klick um neue Ordner zur Spieleliste hinzuzufügen</translation>
     </message>
@@ -5044,12 +5067,12 @@ Screen.</source>
         <translation>Ergebnisse</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="953"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="954"/>
         <source>Filter:</source>
         <translation>Filter:</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/game_list.cpp" line="954"/>
+        <location filename="../../src/lime_qt/game_list.cpp" line="955"/>
         <source>Enter pattern to filter</source>
         <translation>Geben Sie Wörter zum Filtern ein</translation>
     </message>
@@ -5540,7 +5563,7 @@ Falls nein, werden die aufgenommmen Daten verworfen.</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/multiplayer/host_room.cpp" line="165"/>
-        <source>Failed to announce the room to the public lobby. In order to host a room publicly, you must have a valid Citra account configured in Emulation -&gt; Configure -&gt; Web. If you do not want to publish a room in the public lobby, then select Unlisted instead.
+        <source>Failed to announce the room to the public lobby. In order to host a room publicly, you must have a valid Lime3DS account configured in Emulation -&gt; Configure -&gt; Web. If you do not want to publish a room in the public lobby, then select Unlisted instead.
 Debug Message: </source>
         <translation type="unfinished"/>
     </message>
@@ -5596,47 +5619,47 @@ Debug Message: </source>
 <context>
     <name>IPCRecorderWidget</name>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="46"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="52"/>
         <source>Invalid</source>
         <translation>Ungültig</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="48"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="54"/>
         <source>Sent</source>
         <translation>Gesendet</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="50"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="56"/>
         <source>Handling</source>
         <translation>Verarbeitung</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="53"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="59"/>
         <source>Success</source>
         <translation>Erfolgreich</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="55"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="61"/>
         <source>Error</source>
         <translation>Fehler</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="57"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="63"/>
         <source>HLE Unimplemented</source>
         <translation>HLE ist nicht implementiert</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="74"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="80"/>
         <source>HLE</source>
         <translation>HLE</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="74"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="80"/>
         <source>LLE</source>
         <translation>LLE</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="145"/>
+        <location filename="../../src/lime_qt/debugger/ipc/recorder.cpp" line="151"/>
         <source>Unknown</source>
         <translation>Unbekannt</translation>
     </message>
@@ -5846,327 +5869,362 @@ Debug Message: </source>
         <translation>Bildschirmanordnung</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="161"/>
+        <location filename="../../src/lime_qt/main.ui" line="150"/>
+        <source>Small Screen Position</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="178"/>
         <source>Multiplayer</source>
         <translation>Mehrspieler</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="172"/>
+        <location filename="../../src/lime_qt/main.ui" line="189"/>
         <source>Tools</source>
         <translation>Werkzeuge</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="176"/>
+        <location filename="../../src/lime_qt/main.ui" line="193"/>
         <source>Movie</source>
         <translation>Aufnahme</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="187"/>
-        <source>Frame Advance</source>
-        <translation>Frame Advance</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/main.ui" line="200"/>
+        <location filename="../../src/lime_qt/main.ui" line="210"/>
         <source>&amp;Help</source>
         <translation>&amp;Hilfe</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="220"/>
+        <location filename="../../src/lime_qt/main.ui" line="230"/>
         <source>Load File...</source>
         <translation>Datei laden...</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="225"/>
+        <location filename="../../src/lime_qt/main.ui" line="235"/>
         <source>Install CIA...</source>
         <translation>CIA installieren...</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="230"/>
+        <location filename="../../src/lime_qt/main.ui" line="240"/>
         <source>Connect to Artic Base...</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="235"/>
+        <location filename="../../src/lime_qt/main.ui" line="245"/>
         <source>JPN</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="240"/>
+        <location filename="../../src/lime_qt/main.ui" line="250"/>
         <source>USA</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="245"/>
+        <location filename="../../src/lime_qt/main.ui" line="255"/>
         <source>EUR</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="250"/>
+        <location filename="../../src/lime_qt/main.ui" line="260"/>
         <source>AUS</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="255"/>
+        <location filename="../../src/lime_qt/main.ui" line="265"/>
         <source>CHN</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="260"/>
+        <location filename="../../src/lime_qt/main.ui" line="270"/>
         <source>KOR</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="265"/>
+        <location filename="../../src/lime_qt/main.ui" line="275"/>
         <source>TWN</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="270"/>
+        <location filename="../../src/lime_qt/main.ui" line="280"/>
         <source>E&amp;xit</source>
         <translation>&amp;Verlassen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="278"/>
+        <location filename="../../src/lime_qt/main.ui" line="288"/>
         <source>&amp;Pause</source>
         <translation>&amp;Pause</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="286"/>
+        <location filename="../../src/lime_qt/main.ui" line="296"/>
         <source>&amp;Stop</source>
         <translation>&amp;Stop</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="294"/>
+        <location filename="../../src/lime_qt/main.ui" line="304"/>
         <source>Save</source>
         <translation>Speichern</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="302"/>
+        <location filename="../../src/lime_qt/main.ui" line="312"/>
         <source>Load</source>
         <translation>Laden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="307"/>
+        <location filename="../../src/lime_qt/main.ui" line="317"/>
         <source>Discord</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="312"/>
-        <source>About Lime</source>
+        <location filename="../../src/lime_qt/main.ui" line="322"/>
+        <source>About Lime3DS</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="323"/>
+        <location filename="../../src/lime_qt/main.ui" line="333"/>
         <source>Single Window Mode</source>
         <translation>Einzelfenstermodus</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="328"/>
+        <location filename="../../src/lime_qt/main.ui" line="338"/>
         <source>Save to Oldest Slot</source>
         <translation>Im ältesten Slot speichern</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="333"/>
+        <location filename="../../src/lime_qt/main.ui" line="343"/>
         <source>Load from Newest Slot</source>
         <translation>Vom neuesten Slot laden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="338"/>
+        <location filename="../../src/lime_qt/main.ui" line="348"/>
         <source>Configure...</source>
         <translation>Konfigurieren...</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="349"/>
+        <location filename="../../src/lime_qt/main.ui" line="359"/>
         <source>Display Dock Widget Headers</source>
         <translation>Dock Widget Header anzeigen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="357"/>
+        <location filename="../../src/lime_qt/main.ui" line="367"/>
         <source>Show Filter Bar</source>
         <translation>Filterleiste anzeigen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="365"/>
+        <location filename="../../src/lime_qt/main.ui" line="375"/>
         <source>Show Status Bar</source>
         <translation>Statusleiste anzeigen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="370"/>
+        <location filename="../../src/lime_qt/main.ui" line="380"/>
         <source>Create Pica Surface Viewer</source>
         <translation>Pica-Oberflächenansicht</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="375"/>
+        <location filename="../../src/lime_qt/main.ui" line="385"/>
         <source>Record...</source>
         <translation>Aufnehmen...</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="380"/>
+        <location filename="../../src/lime_qt/main.ui" line="390"/>
         <source>Play...</source>
         <translation>Abspielen...</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="385"/>
+        <location filename="../../src/lime_qt/main.ui" line="395"/>
         <source>Close</source>
         <translation>Schließen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="393"/>
+        <location filename="../../src/lime_qt/main.ui" line="406"/>
         <source>Save without Closing</source>
         <translation>Speichern ohne zu schließen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="404"/>
+        <location filename="../../src/lime_qt/main.ui" line="417"/>
         <source>Read-Only Mode</source>
         <translation>Nur-Lesen-Modus</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="412"/>
-        <source>Enable Frame Advancing</source>
-        <translation>Frame Advance aktivieren</translation>
-    </message>
-    <message>
-        <location filename="../../src/lime_qt/main.ui" line="420"/>
+        <location filename="../../src/lime_qt/main.ui" line="425"/>
         <source>Advance Frame</source>
         <translation>Advance Frame</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="428"/>
+        <location filename="../../src/lime_qt/main.ui" line="433"/>
         <source>Capture Screenshot</source>
         <translation>Screenshot aufnehmen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="436"/>
+        <location filename="../../src/lime_qt/main.ui" line="441"/>
         <source>Dump Video</source>
         <translation>Video dumpen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="444"/>
+        <location filename="../../src/lime_qt/main.ui" line="449"/>
         <source>Browse Public Game Lobby</source>
         <translation>Öffentliche Lobby durchsuchen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="452"/>
+        <location filename="../../src/lime_qt/main.ui" line="457"/>
         <source>Create Room</source>
         <translation>Raum erstellen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="460"/>
+        <location filename="../../src/lime_qt/main.ui" line="465"/>
         <source>Leave Room</source>
         <translation>Raum verlassen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="465"/>
+        <location filename="../../src/lime_qt/main.ui" line="470"/>
         <source>Direct Connect to Room</source>
         <translation>Direkt verbinden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="473"/>
+        <location filename="../../src/lime_qt/main.ui" line="478"/>
         <source>Show Current Room</source>
         <translation>Zeige aktuellen Raum an</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="481"/>
+        <location filename="../../src/lime_qt/main.ui" line="486"/>
         <source>Fullscreen</source>
         <translation>Vollbild</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="486"/>
+        <location filename="../../src/lime_qt/main.ui" line="491"/>
         <source>Open Log Folder</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="489"/>
+        <location filename="../../src/lime_qt/main.ui" line="494"/>
         <source>Opens the Lime3DS log folder</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="494"/>
+        <location filename="../../src/lime_qt/main.ui" line="499"/>
         <source>Modify Lime3DS Install</source>
         <translation>Lime3DS-Installation ändern</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="497"/>
+        <location filename="../../src/lime_qt/main.ui" line="502"/>
         <source>Opens the maintenance tool to modify your Lime3DS installation</source>
         <translation>Öffnet das Wartungstool, um die Lime3DS Installation zu verändern</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="505"/>
+        <location filename="../../src/lime_qt/main.ui" line="510"/>
         <source>Default</source>
         <translation>Standard</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="513"/>
+        <location filename="../../src/lime_qt/main.ui" line="518"/>
         <source>Single Screen</source>
         <translation>Einzelner Bildschirm</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="521"/>
+        <location filename="../../src/lime_qt/main.ui" line="526"/>
         <source>Large Screen</source>
         <translation>Großer Bildschirm</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="529"/>
+        <location filename="../../src/lime_qt/main.ui" line="534"/>
         <source>Side by Side</source>
         <translation>Seite an Seite</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="537"/>
+        <location filename="../../src/lime_qt/main.ui" line="542"/>
         <source>Separate Windows</source>
         <translation>Getrennte Fenster</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="545"/>
+        <location filename="../../src/lime_qt/main.ui" line="550"/>
         <source>Hybrid Screen</source>
         <translation>Hybrid-Bildschirm</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="553"/>
+        <location filename="../../src/lime_qt/main.ui" line="558"/>
         <source>Custom Layout</source>
         <translation type="unfinished"/>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="561"/>
+        <location filename="../../src/lime_qt/main.ui" line="566"/>
+        <source>Top Right</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="574"/>
+        <source>Middle Right</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="582"/>
+        <source>Bottom Right</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="590"/>
+        <source>Top Left</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="598"/>
+        <source>Middle Left</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="606"/>
+        <source>Bottom Left</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="614"/>
+        <source>Above</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="622"/>
+        <source>Below</source>
+        <translation type="unfinished"/>
+    </message>
+    <message>
+        <location filename="../../src/lime_qt/main.ui" line="630"/>
         <source>Swap Screens</source>
         <translation>Bildschirme tauschen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="569"/>
+        <location filename="../../src/lime_qt/main.ui" line="638"/>
         <source>Rotate Upright</source>
         <translation>Aufrecht drehen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="574"/>
+        <location filename="../../src/lime_qt/main.ui" line="643"/>
         <source>Check for Updates</source>
         <translation>Auf Updates prüfen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="582"/>
+        <location filename="../../src/lime_qt/main.ui" line="648"/>
         <source>Report Compatibility</source>
         <translation>Kompatibilität melden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="593"/>
+        <location filename="../../src/lime_qt/main.ui" line="656"/>
         <source>Restart</source>
         <translation>Neustart</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="601"/>
+        <location filename="../../src/lime_qt/main.ui" line="664"/>
         <source>Load...</source>
         <translation>Laden...</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="609"/>
+        <location filename="../../src/lime_qt/main.ui" line="672"/>
         <source>Remove</source>
         <translation>Entfernen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="614"/>
+        <location filename="../../src/lime_qt/main.ui" line="677"/>
         <source>Open Lime3DS Folder</source>
         <translation>Lime3DS Verzeichnis öffnen</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/main.ui" line="622"/>
+        <location filename="../../src/lime_qt/main.ui" line="685"/>
         <source>Configure Current Game...</source>
         <translation>Konfiguriere aktuelles Spiel…</translation>
     </message>
@@ -6283,7 +6341,7 @@ Debug Message: </source>
     </message>
     <message>
         <location filename="../../src/lime_qt/movie/movie_play_dialog.cpp" line="54"/>
-        <source>Citra TAS Movie (*.ctm)</source>
+        <source>Lime3DS TAS Movie (*.ctm)</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -6360,7 +6418,7 @@ Debug Message: </source>
     </message>
     <message>
         <location filename="../../src/lime_qt/movie/movie_record_dialog.cpp" line="50"/>
-        <source>Citra TAS Movie (*.ctm)</source>
+        <source>Lime3DS TAS Movie (*.ctm)</source>
         <translation type="unfinished"/>
     </message>
 </context>
@@ -6481,7 +6539,7 @@ Debug-Meldung:</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/multiplayer/message.cpp" line="33"/>
-        <source>Creating a room failed. Please retry. Restarting Citra might be necessary.</source>
+        <source>Creating a room failed. Please retry. Restarting Lime3DS might be necessary.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -6491,7 +6549,7 @@ Debug-Meldung:</translation>
     </message>
     <message>
         <location filename="../../src/lime_qt/multiplayer/message.cpp" line="38"/>
-        <source>Version mismatch! Please update to the latest version of Citra. If the problem persists, contact the room host and ask them to update the server.</source>
+        <source>Version mismatch! Please update to the latest version of Lime3DS. If the problem persists, contact the room host and ask them to update the server.</source>
         <translation type="unfinished"/>
     </message>
     <message>
@@ -6642,71 +6700,71 @@ They may have left the room.</source>
         <translation>%1 konnte nicht geladen werden</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="41"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="50"/>
         <location filename="../../src/lime_qt/configuration/configure_touch_from_button.cpp" line="22"/>
         <source>Shift</source>
         <translation>Umschalttaste</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="43"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="52"/>
         <location filename="../../src/lime_qt/configuration/configure_touch_from_button.cpp" line="24"/>
         <source>Ctrl</source>
         <translation>Strg</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="45"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="54"/>
         <location filename="../../src/lime_qt/configuration/configure_touch_from_button.cpp" line="26"/>
         <source>Alt</source>
         <translation>Alt</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="65"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="115"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="74"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="124"/>
         <location filename="../../src/lime_qt/configuration/configure_touch_from_button.cpp" line="36"/>
         <source>[not set]</source>
         <translation>[nicht gesetzt]</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="77"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="86"/>
         <location filename="../../src/lime_qt/configuration/configure_touch_from_button.cpp" line="48"/>
         <source>Hat %1 %2</source>
         <translation>Hat %1 %2</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="84"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="132"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="135"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="138"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="93"/>
         <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="141"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="144"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="147"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="150"/>
         <location filename="../../src/lime_qt/configuration/configure_touch_from_button.cpp" line="55"/>
         <source>Axis %1%2</source>
         <translation>Achse %1%2</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="90"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="99"/>
         <location filename="../../src/lime_qt/configuration/configure_touch_from_button.cpp" line="61"/>
         <source>Button %1</source>
         <translation>Taste %1</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="101"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="110"/>
         <source>GC Axis %1%2</source>
         <translation>GC-Achse %1%2</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="105"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="114"/>
         <source>GC Button %1</source>
         <translation>GC-Taste %1</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="110"/>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="145"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="119"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="154"/>
         <location filename="../../src/lime_qt/configuration/configure_touch_from_button.cpp" line="67"/>
         <source>[unknown]</source>
         <translation>[unbekannt]</translation>
     </message>
     <message>
-        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="129"/>
+        <location filename="../../src/lime_qt/configuration/configure_input.cpp" line="138"/>
         <source>[unused]</source>
         <translation>[ungenutzt]</translation>
     </message>

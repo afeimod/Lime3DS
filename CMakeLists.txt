@@ -57,7 +57,7 @@ else()
 endif()
 
 option(ENABLE_SDL2 "Enable using SDL2" ON)
-CMAKE_DEPENDENT_OPTION(ENABLE_SDL2_FRONTEND "Enable the SDL2 frontend" ON "ENABLE_SDL2;NOT ANDROID" OFF)
+CMAKE_DEPENDENT_OPTION(ENABLE_SDL2_FRONTEND "Enable the SDL2 frontend" OFF "ENABLE_SDL2;NOT ANDROID" OFF)
 option(USE_SYSTEM_SDL2 "Use the system SDL2 lib (instead of the bundled one)" OFF)
 
 # Set bundled qt as dependent options.
@@ -85,12 +85,23 @@ option(USE_DISCORD_PRESENCE "Enables Discord Rich Presence" OFF)
 # Compile options
 CMAKE_DEPENDENT_OPTION(COMPILE_WITH_DWARF "Add DWARF debugging information" ${IS_DEBUG_BUILD} "MINGW" OFF)
 option(ENABLE_LTO "Enable link time optimization" ${DEFAULT_ENABLE_LTO})
-option(CITRA_USE_PRECOMPILED_HEADERS "Use precompiled headers" ON)
-option(CITRA_WARNINGS_AS_ERRORS "Enable warnings as errors" ON)
+option(LIME3DS_USE_PRECOMPILED_HEADERS "Use precompiled headers" ON)
+option(LIME3DS_WARNINGS_AS_ERRORS "Enable warnings as errors" ON)
 
-include(CitraHandleSystemLibs)
+# Pass the following values to C++ land
+if (ENABLE_QT)
+    add_definitions(-DENABLE_QT)
+endif()
+if (ENABLE_QT_TRANSLATION)
+    add_definitions(-DENABLE_QT_TRANSLATION)
+endif()
+if (ENABLE_SDL2_FRONTEND)
+    add_definitions(-DENABLE_SDL2_FRONTEND)
+endif()
 
-if (CITRA_USE_PRECOMPILED_HEADERS)
+include(Lime3DSHandleSystemLibs)
+
+if (LIME3DS_USE_PRECOMPILED_HEADERS)
     message(STATUS "Using Precompiled Headers.")
     set(CMAKE_PCH_INSTANTIATE_TEMPLATES ON)
 
@@ -152,12 +163,6 @@ endif()
 configure_file(${PROJECT_SOURCE_DIR}/dist/compatibility_list/compatibility_list.qrc
                ${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.qrc
                COPYONLY)
-if (ENABLE_COMPATIBILITY_LIST_DOWNLOAD AND NOT EXISTS ${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.json)
-    message(STATUS "Downloading compatibility list for lime...")
-    file(DOWNLOAD
-        https://api.lime-emu.org/gamedb/
-        "${PROJECT_BINARY_DIR}/dist/compatibility_list/compatibility_list.json" SHOW_PROGRESS)
-endif()
 if (EXISTS ${PROJECT_SOURCE_DIR}/dist/compatibility_list/compatibility_list.json)
     file(COPY "${PROJECT_SOURCE_DIR}/dist/compatibility_list/compatibility_list.json"
         DESTINATION "${PROJECT_BINARY_DIR}/dist/compatibility_list/")
@@ -426,26 +431,19 @@ if (USE_SYSTEM_SOUNDTOUCH)
 endif()
 
 add_subdirectory(src)
-add_subdirectory(dist/installer)
 
-
-# Set lime-qt project or lime project as default StartUp Project in Visual Studio depending on whether QT is enabled or not
-if(ENABLE_QT)
-    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT lime-qt)
-else()
-    set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT lime)
-endif()
+set_property(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR} PROPERTY VS_STARTUP_PROJECT lime)
 
 # Create target for outputting distributable bundles.
 # Not supported for mobile platforms as distributables are built differently.
 if (NOT ANDROID)
     include(BundleTarget)
-    if (ENABLE_SDL2_FRONTEND)
+    if (ENABLE_QT)
+        qt_bundle_target(lime)
+    elseif (ENABLE_SDL2_FRONTEND)
         bundle_target(lime)
     endif()
-    if (ENABLE_QT)
-        bundle_target(lime-qt)
-    endif()
+
     if (ENABLE_DEDICATED_ROOM)
         bundle_target(lime-room)
     endif()
@@ -459,7 +457,7 @@ endif()
 # http://standards.freedesktop.org/icon-theme-spec/icon-theme-spec-latest.html
 # http://standards.freedesktop.org/shared-mime-info-spec/shared-mime-info-spec-latest.html
 if(ENABLE_QT AND UNIX AND NOT APPLE)
-    install(FILES "${PROJECT_SOURCE_DIR}/dist/lime3ds-gui.desktop"
+    install(FILES "${PROJECT_SOURCE_DIR}/dist/lime3ds.desktop"
             DESTINATION "${CMAKE_INSTALL_PREFIX}/share/applications")
     install(FILES "${PROJECT_SOURCE_DIR}/dist/lime.svg"
             DESTINATION "${CMAKE_INSTALL_PREFIX}/share/icons/hicolor/scalable/apps")

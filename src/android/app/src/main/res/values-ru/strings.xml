@@ -25,10 +25,8 @@
     <string name="select_games_folder">Выбор папки с играми</string>
     <string name="select_games_folder_description">Позволяет Lime3DS формировать список игр</string>
     <string name="about">О приложении</string>
-    <string name="citra_description">Эмулятор 3DS с открытым исходным кодом</string>
     <string name="about_description">Версия сборки, разработчики и другое</string>
     <string name="games_dir_selected">Папка с играми выбрана</string>
-    <string name="select_citra_user_folder_home_description">Изменение файлов, используемых Lime3DS для запуска игр</string>
     <string name="theme_and_color_description">Настройка внешнего вида приложения</string>
     <string name="install_cia_title">Установить CIA</string>
 
@@ -45,10 +43,7 @@
 
     <!-- About screen strings -->
     <string name="copied_to_clipboard">Скопировано в буфер обмена</string>
-    <string name="contributors">Участники</string>
-    <string name="contributors_description">Создано с \u2764 от команды Lime3DS</string>
     <string name="contributors_link">https://github.com/Lime3DS/Lime3DS/graphs/contributors</string>
-    <string name="licenses_description">Проекты, которые сделали возможным Lime3DS для Android</string>
     <string name="build">Сборка</string>
     <string name="licenses">Лицензии</string>
     <string name="support_link">https://discord.gg/4ZjMpAp3M6</string>
@@ -81,7 +76,6 @@
     <string name="warning_help">Помощь</string>
     <string name="warning_skip">Пропустить</string>
     <string name="warning_cancel">Отмена</string>
-    <string name="select_citra_user_folder">Выбор папки пользователя</string>
     <string name="select">Выбрать</string>
     <string name="cannot_skip">Вы не можете пропустить данное действие</string>
     <string name="cannot_skip_directory_description">Данный шаг требуется для работы Lime3DS. Пожалуйста, укажите папку, чтобы продолжить.</string>
@@ -196,7 +190,6 @@
     <string name="linear_filtering">Линейное сглаживание</string>
     <string name="linear_filtering_description">Вкл. линейное сглаживание для смягчения графики в играх.</string>
     <string name="texture_filter_name">Сглаживание текстур</string>
-    <string name="texture_filter_description">Улучшает визуализацию в играх с помощью фильтрации текстур. Поддерживаются фильтры Anime4K Ultrafast, Bicubic, ScaleForce и xBRZ freescale.</string>
     <string name="hw_shaders">Вкл. аппаратные шейдеры</string>
     <string name="hw_shaders_description">Эмулировать шейдеры 3DS аппаратными средствами. При включении существенно повышает производительность в играх.</string>
     <string name="shaders_accurate_mul">Точное умножение</string>
@@ -287,7 +280,6 @@
     <string name="preferences_audio">Аудио</string>
     <string name="preferences_debug">Отладка</string>
     <string name="preferences_theme">Тема и цвет</string>
-
     <!-- ROM loading errors -->
     <string name="loader_error_encrypted">Образ зашифрован</string>
     <string name="loader_error_invalid_format">Неправильный формат образа</string>
@@ -312,12 +304,10 @@
     <string name="emulation_open_settings">Открыть настройки</string>
     <string name="emulation_open_cheats">Открыть чит-коды</string>
     <string name="emulation_switch_screen_layout">Ландшафтный макет экрана</string>
-    <string name="emulation_screen_layout_landscape">По умолчанию</string>
     <string name="emulation_screen_layout_portrait">Портретный</string>
     <string name="emulation_screen_layout_single">Один экран</string>
     <string name="emulation_screen_layout_sidebyside">Бок о бок</string>
     <string name="emulation_screen_layout_hybrid">Совмещённый экран</string>
-    <string name="emulation_cycle_landscape_layouts">Сменить ландшафтный макет</string>
     <string name="emulation_swap_screens">Поменять экраны</string>
     <string name="emulation_touch_overlay_reset">Сбросить оверлей</string>
     <string name="emulation_show_overlay">Показывать оверлей</string>
@@ -385,7 +375,7 @@
     <string name="fatal_error">Критическая ошибка</string>
     <string name="fatal_error_message">Возникла критическая ошибка. Откройте лог для получения информации.\nВозобновление эмуляции может привести к сбоям и вылетам.</string>
 
-    <!-- Disk shader cache -->
+    <!-- Disk Shader Cache -->
     <string name="preparing_shaders">Подготовка шейдеров</string>
     <string name="building_shaders">Построение шейдеров</string>
 
@@ -420,14 +410,12 @@
     <string name="cia_install_error_encrypted">\"%s\" необходимо расшифровать перед использованием в Lime3DS.\n Требуется настоящая 3DS</string>
     <string name="cia_install_error_unknown">Неизвестная ошибка при установке \"%s\".\n Откройте лог для просмотра доп. информации</string>
 
-    <!-- Theme Modes -->
-    <string name="change_theme_mode">Тема приложения</string>
     <string name="theme_mode_follow_system">Системная</string>
     <string name="theme_mode_light">Светлая</string>
     <string name="theme_mode_dark">Тёмная</string>
-    <string name="material_you">Material You</string>
-    <string name="material_you_description">Использовать системные цвета в приложении</string>
 
+    <!-- Material You theme -->
+    <string name="material_you">Material You</string>
     <!-- Black backgrounds theme -->
     <string name="use_black_backgrounds">Чёрный фон</string>
     <string name="use_black_backgrounds_description">Применять чёрный фон для тёмной темы.</string>

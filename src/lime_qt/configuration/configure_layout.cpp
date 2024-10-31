@@ -1,8 +1,9 @@
-// Copyright 2019 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
 #include <QColorDialog>
+#include <QtGlobal>
 #include "common/settings.h"
 #include "lime_qt/configuration/configuration_shared.h"
 #include "lime_qt/configuration/configure_layout.h"
@@ -27,6 +28,15 @@ ConfigureLayout::ConfigureLayout(QWidget* parent)
                     currentIndex == (uint)(Settings::LayoutOption::LargeScreen));
             });
 
+    ui->small_screen_position_combobox->setEnabled(
+        (Settings::values.layout_option.GetValue() == Settings::LayoutOption::LargeScreen));
+    connect(ui->layout_combobox,
+            static_cast<void (QComboBox::*)(int)>(&QComboBox::currentIndexChanged), this,
+            [this](int currentIndex) {
+                ui->small_screen_position_combobox->setEnabled(
+                    currentIndex == (uint)(Settings::LayoutOption::LargeScreen));
+            });
+
     ui->single_screen_layout_config_group->setEnabled(
         (Settings::values.layout_option.GetValue() == Settings::LayoutOption::SingleScreen) ||
         (Settings::values.layout_option.GetValue() == Settings::LayoutOption::SeparateWindows));
@@ -48,6 +58,8 @@ ConfigureLayout::ConfigureLayout(QWidget* parent)
             });
 
     ui->screen_top_leftright_padding->setEnabled(Settings::values.screen_top_stretch.GetValue());
+
+#if QT_VERSION < QT_VERSION_CHECK(6, 7, 0)
     connect(ui->screen_top_stretch, static_cast<void (QCheckBox::*)(int)>(&QCheckBox::stateChanged),
             this,
             [this](bool checkState) { ui->screen_top_leftright_padding->setEnabled(checkState); });
@@ -67,6 +79,23 @@ ConfigureLayout::ConfigureLayout(QWidget* parent)
         ui->screen_bottom_stretch, static_cast<void (QCheckBox::*)(int)>(&QCheckBox::stateChanged),
         this,
         [this](bool checkState) { ui->screen_bottom_topbottom_padding->setEnabled(checkState); });
+#else
+    connect(ui->screen_top_stretch, &QCheckBox::checkStateChanged, this,
+            [this](bool checkState) { ui->screen_top_leftright_padding->setEnabled(checkState); });
+    ui->screen_top_topbottom_padding->setEnabled(Settings::values.screen_top_stretch.GetValue());
+    connect(ui->screen_top_stretch, &QCheckBox::checkStateChanged, this,
+            [this](bool checkState) { ui->screen_top_topbottom_padding->setEnabled(checkState); });
+    ui->screen_bottom_leftright_padding->setEnabled(
+        Settings::values.screen_bottom_topbottom_padding.GetValue());
+    connect(
+        ui->screen_bottom_stretch, &QCheckBox::checkStateChanged, this,
+        [this](bool checkState) { ui->screen_bottom_leftright_padding->setEnabled(checkState); });
+    ui->screen_bottom_topbottom_padding->setEnabled(
+        Settings::values.screen_bottom_topbottom_padding.GetValue());
+    connect(
+        ui->screen_bottom_stretch, &QCheckBox::checkStateChanged, this,
+        [this](bool checkState) { ui->screen_bottom_topbottom_padding->setEnabled(checkState); });
+#endif
 
     connect(ui->bg_button, &QPushButton::clicked, this, [this] {
         const QColor new_bg_color = QColorDialog::getColor(bg_color);
@@ -96,7 +125,8 @@ void ConfigureLayout::SetConfiguration() {
     ui->toggle_swap_screen->setChecked(Settings::values.swap_screen.GetValue());
     ui->toggle_upright_screen->setChecked(Settings::values.upright_screen.GetValue());
     ui->large_screen_proportion->setValue(Settings::values.large_screen_proportion.GetValue());
-
+    ui->small_screen_position_combobox->setCurrentIndex(
+        static_cast<int>(Settings::values.small_screen_position.GetValue()));
     ui->custom_top_x->setValue(Settings::values.custom_top_x.GetValue());
     ui->custom_top_y->setValue(Settings::values.custom_top_y.GetValue());
     ui->custom_top_width->setValue(Settings::values.custom_top_width.GetValue());
@@ -133,7 +163,8 @@ void ConfigureLayout::RetranslateUI() {
 
 void ConfigureLayout::ApplyConfiguration() {
     Settings::values.large_screen_proportion = ui->large_screen_proportion->value();
-
+    Settings::values.small_screen_position = static_cast<Settings::SmallScreenPosition>(
+        ui->small_screen_position_combobox->currentIndex());
     Settings::values.custom_top_x = ui->custom_top_x->value();
     Settings::values.custom_top_y = ui->custom_top_y->value();
     Settings::values.custom_top_width = ui->custom_top_width->value();

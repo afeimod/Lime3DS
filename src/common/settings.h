@@ -1,4 +1,4 @@
-// Copyright 2014 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -33,6 +33,7 @@ enum class InitTicks : u32 {
     Fixed = 1,
 };
 
+/** Defines the layout option for desktop and mobile landscape */
 enum class LayoutOption : u32 {
     Default,
     SingleScreen,
@@ -42,25 +43,38 @@ enum class LayoutOption : u32 {
     SeparateWindows,
 #endif
     HybridScreen,
-#ifndef ANDROID // TODO: Implement custom layouts on Android
     CustomLayout,
-#endif
-    // Similiar to default, but better for mobile devices in portrait mode. Top screen in clamped to
-    // the top of the frame, and the bottom screen is enlarged to match the top screen.
-    MobilePortrait,
+};
 
-    // Similiar to LargeScreen, but better for mobile devices in landscape mode. The screens are
-    // clamped to the top of the frame, and the bottom screen is a bit bigger.
-    MobileLandscape,
+/** Defines the layout option for mobile portrait */
+enum class PortraitLayoutOption : u32 {
+    // formerly mobile portrait
+    PortraitTopFullWidth,
+    PortraitCustomLayout,
+};
+
+/** Defines where the small screen will appear relative to the large screen
+ * when in Large Screen mode
+ */
+enum class SmallScreenPosition : u32 {
+    TopRight,
+    MiddleRight,
+    BottomRight,
+    TopLeft,
+    MiddleLeft,
+    BottomLeft,
+    AboveLarge,
+    BelowLarge
 };
 
 enum class StereoRenderOption : u32 {
     Off = 0,
     SideBySide = 1,
-    Anaglyph = 2,
-    Interlaced = 3,
-    ReverseInterlaced = 4,
-    CardboardVR = 5
+    ReverseSideBySide = 2,
+    Anaglyph = 3,
+    Interlaced = 4,
+    ReverseInterlaced = 5,
+    CardboardVR = 6
 };
 
 // Which eye to render when 3d is off. 800px wide mode could be added here in the future, when
@@ -77,7 +91,7 @@ enum class AudioEmulation : u32 {
 };
 
 enum class TextureFilter : u32 {
-    None = 0,
+    NoFilter = 0,
     Anime4K = 1,
     Bicubic = 2,
     ScaleForce = 3,
@@ -418,7 +432,7 @@ struct TouchFromButtonMap {
     std::vector<std::string> buttons;
 };
 
-/// A special region value indicating that citra will automatically select a region
+/// A special region value indicating that lime3ds will automatically select a region
 /// value to fit the region lockout info of the game
 static constexpr s32 REGION_VALUE_AUTO_SELECT = -1;
 
@@ -478,25 +492,25 @@ struct Values {
     SwitchableSetting<bool> use_vsync_new{true, "use_vsync_new"};
     Setting<bool> use_shader_jit{true, "use_shader_jit"};
     SwitchableSetting<u32, true> resolution_factor{1, 0, 10, "resolution_factor"};
-    SwitchableSetting<u16, true> frame_limit{100, 0, 1000, "frame_limit"};
-    SwitchableSetting<TextureFilter> texture_filter{TextureFilter::None, "texture_filter"};
+    SwitchableSetting<double, true> frame_limit{100, 0, 1000, "frame_limit"};
+    SwitchableSetting<TextureFilter> texture_filter{TextureFilter::NoFilter, "texture_filter"};
     SwitchableSetting<TextureSampling> texture_sampling{TextureSampling::GameControlled,
                                                         "texture_sampling"};
-
     SwitchableSetting<LayoutOption> layout_option{LayoutOption::Default, "layout_option"};
     SwitchableSetting<bool> swap_screen{false, "swap_screen"};
     SwitchableSetting<bool> upright_screen{false, "upright_screen"};
     SwitchableSetting<float, true> large_screen_proportion{4.f, 1.f, 16.f,
                                                            "large_screen_proportion"};
-    Setting<bool> custom_layout{false, "custom_layout"};
+    SwitchableSetting<SmallScreenPosition> small_screen_position{SmallScreenPosition::BottomRight,
+                                                                 "small_screen_position"};
     Setting<u16> custom_top_x{0, "custom_top_x"};
     Setting<u16> custom_top_y{0, "custom_top_y"};
-    Setting<u16> custom_top_width{400, "custom_top_width"};
-    Setting<u16> custom_top_height{240, "custom_top_height"};
-    Setting<u16> custom_bottom_x{40, "custom_bottom_x"};
-    Setting<u16> custom_bottom_y{240, "custom_bottom_y"};
-    Setting<u16> custom_bottom_width{320, "custom_bottom_width"};
-    Setting<u16> custom_bottom_height{240, "custom_bottom_height"};
+    Setting<u16> custom_top_width{800, "custom_top_width"};
+    Setting<u16> custom_top_height{480, "custom_top_height"};
+    Setting<u16> custom_bottom_x{80, "custom_bottom_x"};
+    Setting<u16> custom_bottom_y{500, "custom_bottom_y"};
+    Setting<u16> custom_bottom_width{640, "custom_bottom_width"};
+    Setting<u16> custom_bottom_height{480, "custom_bottom_height"};
     Setting<u16> custom_second_layer_opacity{100, "custom_second_layer_opacity"};
 
     SwitchableSetting<bool> screen_top_stretch{false, "screen_top_stretch"};
@@ -505,6 +519,17 @@ struct Values {
     SwitchableSetting<bool> screen_bottom_stretch{false, "screen_bottom_stretch"};
     Setting<u16> screen_bottom_leftright_padding{0, "screen_bottom_leftright_padding"};
     Setting<u16> screen_bottom_topbottom_padding{0, "screen_bottom_topbottom_padding"};
+
+    SwitchableSetting<PortraitLayoutOption> portrait_layout_option{
+        PortraitLayoutOption::PortraitTopFullWidth, "portrait_layout_option"};
+    Setting<u16> custom_portrait_top_x{0, "custom_portrait_top_x"};
+    Setting<u16> custom_portrait_top_y{0, "custom_portrait_top_y"};
+    Setting<u16> custom_portrait_top_width{800, "custom_portrait_top_width"};
+    Setting<u16> custom_portrait_top_height{480, "custom_portrait_top_height"};
+    Setting<u16> custom_portrait_bottom_x{80, "custom_portrait_bottom_x"};
+    Setting<u16> custom_portrait_bottom_y{500, "custom_portrait_bottom_y"};
+    Setting<u16> custom_portrait_bottom_width{640, "custom_portrait_bottom_width"};
+    Setting<u16> custom_portrait_bottom_height{480, "custom_portrait_bottom_height"};
 
     SwitchableSetting<float> bg_red{0.f, "bg_red"};
     SwitchableSetting<float> bg_green{0.f, "bg_green"};

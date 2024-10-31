@@ -1,4 +1,4 @@
-// Copyright 2014 Citra Emulator Project
+// Copyright Citra Emulator Project / Lime3DS Emulator Project
 // Licensed under GPLv2 or any later version
 // Refer to the license.txt file included.
 
@@ -74,7 +74,7 @@ touch_device= engine:emu_window
 
 # Most desktop operating systems do not expose a way to poll the motion state of the controllers
 # so as a way around it, cemuhook created a udp client/server protocol to broadcast the data directly
-# from a controller device to the client program. Citra has a client that can connect and read
+# from a controller device to the client program. Lime3DS has a client that can connect and read
 # from any cemuhook compatible motion program.
 
 # IPv4 address of the udp input server (Default "127.0.0.1")
@@ -158,7 +158,7 @@ bg_blue =
 bg_green =
 
 # Whether and how Stereoscopic 3D should be rendered
-# 0 (default): Off, 1: Side by Side, 2: Anaglyph, 3: Interlaced, 4: Reverse Interlaced, 5: Cardboard VR
+# 0 (default): Off, 1: Side by Side, 2: Reverse Side by Side, 3: Anaglyph, 4: Interlaced, 5: Reverse Interlaced, 6: Cardboard VR
 render_3d =
 
 # Change 3D Intensity
@@ -179,16 +179,31 @@ anaglyph_shader_name =
 filter_mode =
 
 [Layout]
-# Layout for the screen inside the render window.
-# 0 (default): Default Top Bottom Screen, 1: Single Screen Only, 2: Large Screen Small Screen, 3: Side by Side
+# Layout for the screen inside the render window, landscape mode
+# 0: Original (screens vertically aligned)
+# 1: Single Screen Only,
+# 2: Large Screen (Default on android)
+# 3: Side by Side
+# 4: Hybrid
+# 5: Custom Layout
 layout_option =
 
-# Toggle custom layout (using the settings below) on or off.
-# 0 (default): Off, 1: On
-custom_layout =
+# Large Screen Proportion - Relative size of large:small in large screen mode
+# Default value is 2.25
+large_screen_proportion =
+
+# Small Screen Position - where is the small screen relative to the large
+# Default value is 0
+# 0: Top Right    1: Middle Right    2: Bottom Right
+# 3: Top Left     4: Middle left     5: Bottom Left
+# 6: Above the large screen          7: Below the large screen
+small_screen_position =
+
 
 # Screen placement when using Custom layout option
 # 0x, 0y is the top left corner of the render window.
+# suggested aspect ratio for top screen is 5:3
+# suggested aspect ratio for bottom screen is 4:3
 custom_top_x =
 custom_top_y =
 custom_top_width =
@@ -197,6 +212,30 @@ custom_bottom_x =
 custom_bottom_y =
 custom_bottom_width =
 custom_bottom_height =
+
+# Orientation option for the emulator
+# 2 (default): Automatic
+# 0: Landscape
+# 8: Landscape (Flipped)
+# 1: Portrait
+# 9: Portrait (Flipped)
+screen_orientation =
+
+# Layout for the portrait mode
+# 0 (default): Top and bottom screens at top, full width
+# 1: Custom Layout
+portrait_layout_option =
+
+# Screen placement when using Portrait Custom layout option
+# 0x, 0y is the top left corner of the render window.
+custom_portrait_top_x =
+custom_portrait_top_y =
+custom_portrait_top_width =
+custom_portrait_top_height =
+custom_portrait_bottom_x =
+custom_portrait_bottom_y =
+custom_portrait_bottom_width =
+custom_portrait_bottom_height =
 
 # Swaps the prominent screen with the other screen.
 # For example, if Single Screen is chosen, setting this to 1 will display the bottom screen instead of the top screen.
@@ -273,7 +312,7 @@ input_device =
 use_virtual_sd =
 
 [System]
-# The system model that Citra will try to emulate
+# The system model that Lime3DS will try to emulate
 # 0: Old 3DS (default), 1: New 3DS
 is_new_3ds =
 
@@ -281,16 +320,16 @@ is_new_3ds =
 # 0 (default): No, 1: Yes
 lle_applets =
 
-# The system region that Citra will use during emulation
+# The system region that Lime3DS will use during emulation
 # -1: Auto-select (default), 0: Japan, 1: USA, 2: Europe, 3: Australia, 4: China, 5: Korea, 6: Taiwan
 region_value =
 
-# The system language that Citra will use during emulation
+# The system language that Lime3DS will use during emulation
 # 0: Japanese, 1: English (default), 2: French, 3: German, 4: Italian, 5: Spanish,
 # 6: Simplified Chinese, 7: Korean, 8: Dutch, 9: Portuguese, 10: Russian, 11: Traditional Chinese
 language =
 
-# The clock to use when citra starts
+# The clock to use when lime3ds starts
 # 0: System clock (default), 1: fixed time
 init_clock =
 
@@ -299,7 +338,7 @@ init_clock =
 # Note: 3DS can only handle times later then Jan 1 2000
 init_time =
 
-# The system ticks count to use when citra starts
+# The system ticks count to use when lime3ds starts
 # 0: Random (default), 1: Fixed
 init_ticks_type =
 
@@ -362,9 +401,9 @@ gdbstub_port=24689
 [WebService]
 # URL for Web API
 web_api_url = https://api.citra-emu.org
-# Username and token for Citra Web Service
+# Username and token for Lime3DS Web Service
 # See https://profile.citra-emu.org/ for more info
-citra_username =
-citra_token =
+lime3ds_username =
+lime3ds_token =
 )";
 }

@@ -9,7 +9,7 @@
 #include <QString>
 #include <QtConcurrent/QtConcurrentRun>
 #include "core/hle/service/cfg/cfg.h"
-#include "lime_qt/main.h"
+#include "lime_qt/lime_qt.h"
 #include "lime_qt/multiplayer/direct_connect.h"
 #include "lime_qt/multiplayer/message.h"
 #include "lime_qt/multiplayer/validation.h"
@@ -32,9 +32,9 @@ DirectConnectWindow::DirectConnectWindow(Core::System& system_, QWidget* parent)
 
     ui->nickname->setValidator(validation.GetNickname());
     ui->nickname->setText(UISettings::values.nickname);
-    if (ui->nickname->text().isEmpty() && !NetSettings::values.citra_username.empty()) {
-        // Use Citra Web Service user name as nickname by default
-        ui->nickname->setText(QString::fromStdString(NetSettings::values.citra_username));
+    if (ui->nickname->text().isEmpty() && !NetSettings::values.lime3ds_username.empty()) {
+        // Use Lime3DS Web Service user name as nickname by default
+        ui->nickname->setText(QString::fromStdString(NetSettings::values.lime3ds_username));
     }
     ui->ip->setValidator(validation.GetIP());
     ui->ip->setText(UISettings::values.ip);

@@ -38,7 +38,7 @@ enum class Class : u8 {
     Core_ARM11,        ///< ARM11 CPU core
     Core_Timing,       ///< CoreTiming functions
     Core_Cheats,       ///< Cheat functions
-    Config,            ///< Emulator configuration (including commandline)
+    Config,            ///< Emulator configuration
     Debug,             ///< Debugging tools
     Debug_Emulated,    ///< Debug messages from the emulated programs
     Debug_GPU,         ///< GPU debugging tools
@@ -100,7 +100,7 @@ enum class Class : u8 {
     Input,           ///< Input emulation
     Network,         ///< Network emulation
     Movie,           ///< Movie (Input Recording) Playback
-    WebService,      ///< Interface to Citra Web Services
+    WebService,      ///< Interface to Lime3DS Web Services
     RPC_Server,      ///< RPC server
     Count,           ///< Total number of logging classes
 };
